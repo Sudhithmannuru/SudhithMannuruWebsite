@@ -6,11 +6,59 @@ import { externalRel } from "@/lib/utils";
 import { Check, Copy } from "lucide-react";
 import { FormEvent, useState } from "react";
 
+type Status = "idle" | "sending" | "sent" | "activation" | "error";
+
+async function submitMessage(payload: {
+  name: string;
+  email: string;
+  message: string;
+  website: string;
+}) {
+  const body = new FormData();
+  body.append("name", payload.name);
+  body.append("email", payload.email);
+  body.append("message", payload.message);
+  body.append("_subject", `Portfolio message from ${payload.name}`);
+  body.append("_template", "table");
+  body.append("_captcha", "false");
+  body.append("_replyto", payload.email);
+  if (payload.website) body.append("_honey", payload.website);
+
+  const response = await fetch(
+    `https://formsubmit.co/ajax/${siteConfig.email}`,
+    {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body,
+    },
+  );
+
+  const result = (await response.json().catch(() => null)) as {
+    success?: string | boolean;
+    message?: string;
+  } | null;
+
+  const text = `${result?.message ?? ""}`.toLowerCase();
+  if (text.includes("activation") || text.includes("activate")) {
+    return "activation" as const;
+  }
+
+  if (
+    !response.ok ||
+    result?.success === "false" ||
+    result?.success === false
+  ) {
+    throw new Error(
+      result?.message || "The message could not be sent. Try emailing me directly.",
+    );
+  }
+
+  return "sent" as const;
+}
+
 export function Contact() {
   const [copied, setCopied] = useState(false);
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle",
-  );
+  const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
   const copyEmail = async () => {
@@ -31,59 +79,22 @@ export function Contact() {
     setError("");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: String(data.get("name") ?? ""),
-          email: String(data.get("email") ?? ""),
-          message: String(data.get("message") ?? ""),
-          website: String(data.get("website") ?? ""),
-        }),
+      const outcome = await submitMessage({
+        name: String(data.get("name") ?? ""),
+        email: String(data.get("email") ?? ""),
+        message: String(data.get("message") ?? ""),
+        website: String(data.get("website") ?? ""),
       });
-      if (response.status === 404) {
-        throw new Error("NOT_DEPLOYED");
-      }
-      const result = (await response.json()) as { error?: string };
-      if (!response.ok) {
-        throw new Error(result.error || "The message could not be sent.");
-      }
-      setStatus("sent");
-      form.reset();
-    } catch (cause) {
-      if (cause instanceof Error && cause.message === "NOT_DEPLOYED") {
-        const fallback = await fetch(
-          `https://formsubmit.co/ajax/${siteConfig.email}`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            body: JSON.stringify({
-              name: String(data.get("name") ?? ""),
-              email: String(data.get("email") ?? ""),
-              message: String(data.get("message") ?? ""),
-              _subject: `Portfolio message from ${String(data.get("name") ?? "")}`,
-              _template: "table",
-              _captcha: "false",
-            }),
-          },
-        );
-        if (!fallback.ok) {
-          setStatus("error");
-          setError("The message could not be sent.");
-          return;
-        }
-        setStatus("sent");
+      setStatus(outcome);
+      if (outcome === "sent" || outcome === "activation") {
         form.reset();
-        return;
       }
+    } catch (cause) {
       setStatus("error");
       setError(
         cause instanceof Error
           ? cause.message
-          : "The message could not be sent.",
+          : "The message could not be sent. Try emailing me directly.",
       );
     }
   };
@@ -96,9 +107,6 @@ export function Contact() {
           <Reveal>
             <p className="mt-6 max-w-md text-base leading-relaxed text-[var(--fg-muted)]">
               For projects, research, or a conversation about building with more care.
-              {siteConfig.emailIsPlaceholder
-                ? " The email below is a placeholder until a public inbox is published."
-                : ""}
             </p>
             <button
               type="button"
@@ -174,9 +182,14 @@ export function Contact() {
             ) : null}
             {status === "sent" ? (
               <p className="mt-4 text-sm text-[var(--fg-muted)]">
-                Message sent to {siteConfig.email}. The first time, Gmail may
-                get a confirmation from FormSubmit — check spam and click it so
-                later messages arrive.
+                Message sent to {siteConfig.email}.
+              </p>
+            ) : null}
+            {status === "activation" ? (
+              <p className="mt-4 text-sm text-[var(--fg-muted)]">
+                Check {siteConfig.email} for a FormSubmit confirmation — including
+                spam — and click Activate Form. After that, messages will arrive
+                in Gmail.
               </p>
             ) : null}
             <button
@@ -186,7 +199,7 @@ export function Contact() {
             >
               {status === "sending"
                 ? "Sending…"
-                : status === "sent"
+                : status === "sent" || status === "activation"
                   ? "Send another"
                   : "Send message"}
             </button>
