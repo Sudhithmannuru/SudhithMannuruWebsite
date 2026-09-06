@@ -38,33 +38,41 @@ export async function POST(request: Request) {
     );
   }
 
-  const response = await fetch(
-    `https://formsubmit.co/ajax/${siteConfig.email}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-        _subject: `Portfolio message from ${name}`,
-        _template: "table",
-        _captcha: "false",
-        _replyto: email,
-      }),
-    },
-  );
+  const body = new FormData();
+  body.append("name", name);
+  body.append("email", email);
+  body.append("message", message);
+  body.append("_subject", `Portfolio message from ${name}`);
+  body.append("_template", "table");
+  body.append("_captcha", "false");
+  body.append("_replyto", email);
+
+  const response = await fetch(`https://formsubmit.co/ajax/${siteConfig.email}`, {
+    method: "POST",
+    headers: { Accept: "application/json" },
+    body,
+  });
 
   const result = (await response.json().catch(() => null)) as
     | { success?: string | boolean; message?: string }
     | null;
 
-  if (!response.ok || result?.success === "false" || result?.success === false) {
+  const text = `${result?.message ?? ""}`.toLowerCase();
+  if (text.includes("activation") || text.includes("activate")) {
+    return NextResponse.json({ ok: true, activation: true });
+  }
+
+  if (
+    !response.ok ||
+    result?.success === "false" ||
+    result?.success === false
+  ) {
     return NextResponse.json(
-      { error: "The message could not be sent. Try emailing me directly." },
+      {
+        error:
+          result?.message ||
+          "The message could not be sent. Try emailing me directly.",
+      },
       { status: 502 },
     );
   }
