@@ -197,18 +197,18 @@ body {
 }
 
 .hero-orbit {
-  --orbit-r: 5.85rem;
+  --orbit-r: 7.6rem;
 }
 
 @media (min-width: 640px) {
   .hero-orbit {
-    --orbit-r: 6.7rem;
+    --orbit-r: 9.15rem;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-orbit {
-    --orbit-r: 7.35rem;
+    --orbit-r: 10.7rem;
   }
 }
 

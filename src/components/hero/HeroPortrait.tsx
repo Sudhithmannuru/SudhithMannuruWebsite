@@ -35,11 +35,11 @@ export function HeroPortrait() {
       initial={reduce ? false : { opacity: 0, x: 18 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, delay: 0.12 }}
-      className="hero-orbit relative ml-auto h-[17.5rem] w-[17.5rem] shrink-0 sm:h-[20.5rem] sm:w-[20.5rem] lg:h-[22.5rem] lg:w-[22.5rem]"
+      className="hero-orbit relative ml-auto h-[22rem] w-[22rem] shrink-0 sm:h-[26rem] sm:w-[26rem] lg:h-[30rem] lg:w-[30rem]"
       aria-label="Rotating portraits of Sudhith Mannuru"
     >
       <div
-        className="absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-blue)]/14 blur-3xl sm:h-44 sm:w-44"
+        className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-blue)]/14 blur-3xl sm:h-56 sm:w-56"
         aria-hidden
       />
 
@@ -61,13 +61,13 @@ export function HeroPortrait() {
                   type="button"
                   onClick={() => setCurrent(portrait.index)}
                   aria-label={portrait.alt}
-                  className="relative h-11 w-11 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white bg-[var(--card)] p-0 shadow-[0_10px_24px_rgba(0,0,0,0.14)] sm:h-[3.15rem] sm:w-[3.15rem] lg:h-[3.4rem] lg:w-[3.4rem] dark:border-white/15"
+                  className="relative h-16 w-16 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white bg-[var(--card)] p-0 shadow-[0_10px_24px_rgba(0,0,0,0.14)] sm:h-[4.5rem] sm:w-[4.5rem] lg:h-20 lg:w-20 dark:border-white/15"
                 >
                   <Image
                     src={portrait.src}
                     alt=""
                     fill
-                    sizes="64px"
+                    sizes="80px"
                     className="object-cover"
                     style={{ objectPosition: portrait.position }}
                   />
@@ -78,7 +78,7 @@ export function HeroPortrait() {
         })}
       </div>
 
-      <div className="absolute left-1/2 top-1/2 z-10 h-[7.4rem] w-[7.4rem] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-[3px] border-white shadow-[0_16px_40px_rgba(0,0,0,0.16)] sm:h-[8.6rem] sm:w-[8.6rem] lg:h-[9.4rem] lg:w-[9.4rem] dark:border-white/15">
+      <div className="absolute left-1/2 top-1/2 z-10 h-[11rem] w-[11rem] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-[3px] border-white shadow-[0_16px_40px_rgba(0,0,0,0.16)] sm:h-[13rem] sm:w-[13rem] lg:h-[14.5rem] lg:w-[14.5rem] dark:border-white/15">
         <AnimatePresence mode="wait">
           <motion.div
             key={featured.src}
@@ -92,7 +92,7 @@ export function HeroPortrait() {
               src={featured.src}
               alt={featured.alt}
               fill
-              sizes="180px"
+              sizes="280px"
               priority
               className="object-cover"
               style={{ objectPosition: featured.position }}
