@@ -26,7 +26,7 @@ export function Footer() {
                   href={link.href}
                   {...externalRel()}
                   aria-label={`${link.label} (opens in a new tab)`}
-                  className="grid h-10 w-10 place-items-center rounded-full border border-[var(--line)] text-[var(--fg)] transition-colors hover:border-[var(--line-strong)]"
+                  className="grid h-10 w-10 place-items-center rounded-full text-[var(--fg-muted)] transition-colors hover:bg-[var(--card)] hover:text-[var(--fg)]"
                 >
                   <Icon className="h-4 w-4" aria-hidden />
                 </a>

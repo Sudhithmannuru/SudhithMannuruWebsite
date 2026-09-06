@@ -55,6 +55,84 @@ export const stats = [
   },
 ] as const;
 
+export const heroPortraits = [
+  {
+    src: "/photos/hero/15.jpg",
+    alt: "Sudhith Mannuru on a bridge with a city skyline behind him.",
+    position: "50% 18%",
+  },
+  {
+    src: "/photos/hero/01.jpg",
+    alt: "A childhood portrait of Sudhith Mannuru.",
+    position: "50% 18%",
+  },
+  {
+    src: "/photos/hero/02.jpg",
+    alt: "Sudhith Mannuru as a child with his mother.",
+    position: "48% 28%",
+  },
+  {
+    src: "/photos/hero/03.jpg",
+    alt: "Sudhith Mannuru as a child with his family.",
+    position: "42% 28%",
+  },
+  {
+    src: "/photos/hero/04.jpg",
+    alt: "Sudhith Mannuru with family in autumn.",
+    position: "68% 28%",
+  },
+  {
+    src: "/photos/hero/05.jpg",
+    alt: "Sudhith Mannuru with family in the mountains.",
+    position: "78% 28%",
+  },
+  {
+    src: "/photos/hero/06.jpg",
+    alt: "Sudhith Mannuru on a mountain skywalk.",
+    position: "82% 22%",
+  },
+  {
+    src: "/photos/hero/07.jpg",
+    alt: "Sudhith Mannuru in a playful costume.",
+    position: "50% 22%",
+  },
+  {
+    src: "/photos/hero/08.jpg",
+    alt: "Sudhith Mannuru at the Trevi Fountain.",
+    position: "72% 22%",
+  },
+  {
+    src: "/photos/hero/09.jpg",
+    alt: "Sudhith Mannuru with his father at the Trevi Fountain.",
+    position: "32% 22%",
+  },
+  {
+    src: "/photos/hero/10.jpg",
+    alt: "Sudhith Mannuru in Rome.",
+    position: "58% 22%",
+  },
+  {
+    src: "/photos/hero/11.jpg",
+    alt: "Sudhith Mannuru with family outdoors.",
+    position: "28% 22%",
+  },
+  {
+    src: "/photos/hero/12.jpg",
+    alt: "Sudhith Mannuru at home with his mother.",
+    position: "28% 20%",
+  },
+  {
+    src: "/photos/hero/13.jpg",
+    alt: "Sudhith Mannuru standing with his mother.",
+    position: "72% 20%",
+  },
+  {
+    src: "/photos/hero/14.jpg",
+    alt: "Sudhith Mannuru taking a photo with his mother.",
+    position: "22% 22%",
+  },
+] as const;
+
 export const about = {
   kicker: "About",
   headline: "Curious enough to ask the hard question. Persistent enough to build the answer.",

@@ -151,7 +151,7 @@ export function NeuralField() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 h-full w-full opacity-80"
+      className="absolute inset-0 h-full w-full opacity-55"
       aria-hidden
     />
   );

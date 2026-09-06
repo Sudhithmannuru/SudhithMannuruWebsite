@@ -21,7 +21,7 @@ export function Travel() {
           description="Puerto Rico, Rome, Banff, Vellore, Bengaluru, Miami, and New York — a field notebook more than a checklist."
         />
 
-        <Reveal className="mt-12 overflow-hidden rounded-[32px]">
+        <Reveal className="mt-12 overflow-hidden rounded-[28px] shadow-[var(--shadow)]">
           <div className="relative aspect-[4/5] min-h-[420px] w-full sm:aspect-[16/10]">
             {travel.map((item) => (
               <Image

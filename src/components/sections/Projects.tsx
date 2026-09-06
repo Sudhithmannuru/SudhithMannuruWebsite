@@ -21,7 +21,7 @@ function ProjectLinks({
         href={github}
         {...externalRel()}
         aria-label={`${name} on GitHub (opens in a new tab)`}
-        className="inline-flex items-center gap-2 rounded-full bg-[var(--fg)] px-5 py-2.5 text-sm font-medium text-[var(--bg)]"
+        className="inline-flex items-center gap-2 btn-primary"
       >
         GitHub
         <ArrowUpRight className="h-4 w-4" aria-hidden />
@@ -31,7 +31,7 @@ function ProjectLinks({
           href={demo}
           {...externalRel()}
           aria-label={`${name} live demo (opens in a new tab)`}
-          className="inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] px-5 py-2.5 text-sm font-medium"
+          className="inline-flex items-center gap-2 btn-secondary"
         >
           Live demo
           <ArrowUpRight className="h-4 w-4" aria-hidden />
@@ -73,8 +73,8 @@ function ProjectShot({
     <div
       className={
         framed
-          ? "overflow-hidden rounded-[32px] border border-[var(--line)] bg-[#f4f5f7] p-6 sm:p-10 dark:bg-[#111318]"
-          : "overflow-hidden rounded-[32px] border border-[var(--line)]"
+          ? "media-frame bg-[#e8e8ed] p-6 sm:p-10 dark:bg-[#111114]"
+          : "media-frame"
       }
     >
       <Image
@@ -111,10 +111,10 @@ export function Projects() {
           </Reveal>
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <Reveal>
-              <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-blue)]">
+              <p className="kicker">
                 {nomae.kicker}
               </p>
-              <h3 className="display mt-3 text-5xl sm:text-6xl">{nomae.name}</h3>
+              <h3 className="display mt-3 text-4xl sm:text-5xl">{nomae.name}</h3>
               <p className="mt-5 text-2xl leading-snug tracking-tight">{nomae.headline}</p>
             </Reveal>
             <Reveal>
@@ -134,10 +134,10 @@ export function Projects() {
 
         <article className="mt-28">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-blue)]">
+            <p className="kicker">
               {civitas.kicker}
             </p>
-            <h3 className="display mt-3 text-5xl sm:text-7xl">{civitas.name}</h3>
+            <h3 className="display mt-3 text-4xl sm:text-6xl">{civitas.name}</h3>
             <p className="mt-5 max-w-3xl text-xl leading-snug sm:text-2xl">
               {civitas.headline}
             </p>
@@ -167,10 +167,10 @@ export function Projects() {
           </Reveal>
           <Reveal>
             <div className="mt-8 max-w-3xl">
-              <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-blue)]">
+              <p className="kicker">
                 {anact.kicker}
               </p>
-              <h3 className="display mt-3 text-5xl sm:text-6xl">{anact.name}</h3>
+              <h3 className="display mt-3 text-4xl sm:text-5xl">{anact.name}</h3>
               <p className="mt-4 text-xl tracking-tight sm:text-2xl">{anact.headline}</p>
               <p className="mt-5 text-base leading-relaxed text-[var(--fg-muted)]">
                 {anact.description}

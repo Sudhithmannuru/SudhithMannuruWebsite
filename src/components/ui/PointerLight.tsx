@@ -23,7 +23,7 @@ export function PointerLight() {
       className="pointer-events-none fixed inset-0 z-10 hidden mix-blend-soft-light md:block"
       style={{
         background:
-          "radial-gradient(420px circle at var(--pointer-x, 50%) var(--pointer-y, 20%), rgba(47,125,255,0.12), transparent 55%)",
+          "radial-gradient(380px circle at var(--pointer-x, 50%) var(--pointer-y, 20%), rgba(0,113,227,0.07), transparent 58%)",
       }}
     />
   );

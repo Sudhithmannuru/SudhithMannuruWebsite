@@ -49,7 +49,7 @@ export function Experience() {
             {experiences.map((item) =>
               item.id === active ? (
                 <div key={item.id} className="glass rounded-[32px] p-7 sm:p-9">
-                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--color-blue)]">
+                  <p className="kicker text-[var(--color-blue)]">
                     {item.org}
                   </p>
                   <h3 className="mt-3 text-3xl tracking-tight">{item.role}</h3>

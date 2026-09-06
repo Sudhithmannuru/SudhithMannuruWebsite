@@ -47,7 +47,7 @@ export function Contact() {
             <button
               type="button"
               onClick={copyEmail}
-              className="mt-6 inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] px-4 py-2.5 text-sm"
+              className="btn-secondary mt-6"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               {copied ? "Email copied" : siteConfig.email}
@@ -59,7 +59,7 @@ export function Contact() {
                     href={link.href}
                     {...externalRel()}
                     aria-label={`${link.label} (opens in a new tab)`}
-                    className="inline-flex rounded-full border border-[var(--line)] px-4 py-2 text-sm"
+                    className="btn-secondary !px-4 !py-2"
                   >
                     {link.label}
                   </a>
@@ -80,7 +80,7 @@ export function Contact() {
                   required
                   name="name"
                   autoComplete="name"
-                  className="w-full rounded-2xl border border-[var(--line)] bg-transparent px-4 py-3 text-base outline-none focus:border-[var(--color-blue)]"
+                  className="w-full rounded-2xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--color-blue)]"
                 />
               </label>
               <label className="block">
@@ -90,7 +90,7 @@ export function Contact() {
                   type="email"
                   name="email"
                   autoComplete="email"
-                  className="w-full rounded-2xl border border-[var(--line)] bg-transparent px-4 py-3 text-base outline-none focus:border-[var(--color-blue)]"
+                  className="w-full rounded-2xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--color-blue)]"
                 />
               </label>
               <label className="block">
@@ -99,13 +99,13 @@ export function Contact() {
                   required
                   name="message"
                   rows={5}
-                  className="w-full resize-y rounded-2xl border border-[var(--line)] bg-transparent px-4 py-3 text-base outline-none focus:border-[var(--color-blue)]"
+                  className="w-full resize-y rounded-2xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--color-blue)]"
                 />
               </label>
             </div>
             <button
               type="submit"
-              className="mt-6 w-full rounded-full bg-[var(--fg)] px-5 py-3 text-sm font-medium text-[var(--bg)]"
+              className="btn-primary mt-6 w-full"
             >
               {sent ? "Opening your email app" : "Send message"}
             </button>
