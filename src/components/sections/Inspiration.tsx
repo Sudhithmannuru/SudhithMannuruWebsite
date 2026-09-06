@@ -13,25 +13,25 @@ export function Inspiration() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading kicker="Personal inspiration" title={family.headline} />
         <Reveal>
-          <blockquote className="mt-10 max-w-4xl text-2xl leading-snug tracking-tight sm:text-3xl md:text-4xl">
+          <blockquote className="mt-10 max-w-4xl text-[1.45rem] leading-snug tracking-[-0.03em] text-[var(--fg)] sm:text-3xl md:text-[2.15rem]">
             “{family.quote}”
           </blockquote>
         </Reveal>
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {family.people.map((person, index) => (
             <Reveal key={person.name} delay={index * 0.06}>
-              <article className="h-full overflow-hidden rounded-[28px] border border-[var(--line)]">
+              <article className="glass h-full overflow-hidden rounded-[28px]">
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
                     src={person.image}
                     alt={person.alt}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
                     sizes="(min-width: 768px) 30vw, 100vw"
                   />
                 </div>
                 <div className="p-6">
-                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--fg-muted)]">
+                  <p className="kicker">
                     {person.relation}
                   </p>
                   <h3 className="mt-3 text-2xl tracking-tight">{person.name}</h3>
@@ -46,7 +46,7 @@ export function Inspiration() {
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           {family.gallery.map((shot, index) => (
             <Reveal key={shot.image} delay={index * 0.06}>
-              <div className="relative overflow-hidden rounded-[28px]">
+              <div className="media-frame">
                 <Image
                   src={shot.image}
                   alt={shot.alt}

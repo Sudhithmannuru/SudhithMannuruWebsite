@@ -9,7 +9,7 @@ export function About() {
     <section id="about" className="section-pad py-24 md:py-32">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[32px]">
+          <div className="media-frame">
             <Image
               src="/photos/sudhith-portrait.jpg"
               alt="Sudhith Mannuru standing on a bridge with a river and city skyline behind him."
@@ -23,13 +23,13 @@ export function About() {
         </Reveal>
         <div className="space-y-8">
           <Reveal>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-blue)]">
+            <p className="kicker mb-5">
               {about.kicker}
             </p>
-            <h2 className="display text-4xl sm:text-5xl md:text-6xl">{about.headline}</h2>
+            <h2 className="display text-[2.15rem] sm:text-5xl md:text-[3.4rem]">{about.headline}</h2>
           </Reveal>
           <Reveal>
-            <blockquote className="border-l border-[var(--color-blue)] pl-5 text-2xl leading-snug tracking-tight sm:text-3xl">
+            <blockquote className="border-l border-[var(--line-strong)] pl-5 text-2xl leading-snug tracking-[-0.03em] text-[var(--fg)] sm:text-[1.85rem]">
               “{about.pullQuote}”
             </blockquote>
           </Reveal>

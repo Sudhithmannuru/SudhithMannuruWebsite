@@ -21,7 +21,7 @@ export function AcademicSnapshot() {
               key={stat.id}
               delay={index * 0.05}
               className={cn(
-                "glass rounded-[28px] p-6 sm:p-7",
+                "glass rounded-[24px] p-6 sm:p-7",
                 stat.featured ? "sm:col-span-2 lg:col-span-3" : "lg:col-span-2",
               )}
             >

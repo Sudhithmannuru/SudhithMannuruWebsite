@@ -12,7 +12,7 @@ export default function ResumePage() {
 
   return (
     <main id="main" className="section-pad mx-auto w-full max-w-5xl pt-28 pb-16">
-      <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[var(--fg-muted)]">
+      <p className="kicker">
         {siteConfig.heroLabel}
       </p>
       <h1 className="display mt-4 text-[clamp(2.4rem,6vw,4.8rem)]">{siteConfig.name}</h1>
@@ -54,7 +54,7 @@ export default function ResumePage() {
         ) : null}
       </div>
 
-      <div className="mt-10 overflow-hidden rounded-[32px] border border-[var(--line)] bg-[var(--card)] shadow-[var(--shadow)]">
+      <div className="media-frame mt-10">
         <object
           data={`${siteConfig.resumePdfHref}#view=FitH`}
           type="application/pdf"

@@ -24,7 +24,7 @@ export function Leadership() {
                 item.span === "sm" && "md:col-span-3 lg:col-span-3",
               )}
             >
-              <p className="text-xs uppercase tracking-[0.18em] text-[var(--color-blue)]">
+              <p className="kicker">
                 {item.role}
               </p>
               <h3 className="mt-3 text-2xl tracking-tight sm:text-3xl">{item.org}</h3>

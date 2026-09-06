@@ -46,10 +46,10 @@ export function SectionHeading({
 }) {
   return (
     <Reveal className={cn(align === "center" && "text-center mx-auto max-w-3xl")}>
-      <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-blue)]">
+      <p className="kicker mb-5">
         {kicker}
       </p>
-      <h2 className="display max-w-4xl text-4xl text-[var(--fg)] sm:text-5xl md:text-6xl">
+      <h2 className="display max-w-4xl text-[2.15rem] text-[var(--fg)] sm:text-5xl md:text-[3.4rem]">
         {title}
       </h2>
       {description ? (
