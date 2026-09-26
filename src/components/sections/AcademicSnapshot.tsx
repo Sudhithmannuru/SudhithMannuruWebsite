@@ -15,15 +15,12 @@ export function AcademicSnapshot() {
           title="Measured by rigor, not noise."
           description={siteConfig.schoolLine}
         />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-12 grid gap-4 sm:grid-cols-3">
           {stats.map((stat, index) => (
             <Reveal
               key={stat.id}
               delay={index * 0.05}
-              className={cn(
-                "glass rounded-[24px] p-6 sm:p-7",
-                stat.featured ? "sm:col-span-2 lg:col-span-3" : "lg:col-span-2",
-              )}
+              className="glass rounded-[24px] p-6 sm:p-7"
             >
               <p className="text-xs uppercase tracking-[0.18em] text-[var(--fg-muted)]">
                 {stat.label}

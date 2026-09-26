@@ -2,7 +2,6 @@
 
 import { ThemeProvider } from "next-themes";
 import { HashScroll } from "@/components/layout/HashScroll";
-import { PointerLight } from "@/components/ui/PointerLight";
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   return (
@@ -12,7 +11,6 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
       enableSystem={false}
       storageKey="sudhith-theme"
     >
-      <PointerLight />
       <HashScroll />
       {children}
     </ThemeProvider>

@@ -1,190 +1,90 @@
 "use client";
 
 import { projects } from "@/data/content";
-import { Reveal, SectionHeading } from "@/components/ui/Reveal";
-import { externalRel } from "@/lib/utils";
-import { ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
+import { cn, externalRel } from "@/lib/utils";
 import Image from "next/image";
 
-function ProjectLinks({
-  name,
-  github,
-  demo,
-}: {
-  name: string;
-  github: string;
-  demo: string | null;
-}) {
-  return (
-    <div className="mt-7 flex flex-wrap gap-3">
-      <a
-        href={github}
-        {...externalRel()}
-        aria-label={`${name} on GitHub (opens in a new tab)`}
-        className="inline-flex items-center gap-2 btn-primary"
-      >
-        GitHub
-        <ArrowUpRight className="h-4 w-4" aria-hidden />
-      </a>
-      {demo ? (
-        <a
-          href={demo}
-          {...externalRel()}
-          aria-label={`${name} live demo (opens in a new tab)`}
-          className="inline-flex items-center gap-2 btn-secondary"
-        >
-          Live demo
-          <ArrowUpRight className="h-4 w-4" aria-hidden />
-        </a>
-      ) : (
-        <span className="inline-flex items-center rounded-full border border-dashed border-[var(--line-strong)] px-5 py-2.5 text-sm text-[var(--fg-muted)]">
-          Live demo coming soon
-        </span>
-      )}
-    </div>
-  );
-}
-
-function Tags({ tags }: { tags: readonly string[] }) {
-  return (
-    <ul className="mt-6 flex flex-wrap gap-2">
-      {tags.map((tag) => (
-        <li
-          key={tag}
-          className="rounded-full border border-[var(--line)] px-3 py-1 text-xs text-[var(--fg-muted)]"
-        >
-          {tag}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function ProjectShot({
-  src,
-  alt,
-  framed,
-}: {
-  src: string;
-  alt: string;
-  framed?: boolean;
-}) {
-  return (
-    <div
-      className={
-        framed
-          ? "media-frame bg-[#e8e8ed] p-6 sm:p-10 dark:bg-[#111114]"
-          : "media-frame"
-      }
-    >
-      <Image
-        src={src}
-        alt={alt}
-        width={1600}
-        height={1000}
-        className={
-          framed
-            ? "mx-auto h-auto max-h-[540px] w-auto object-contain"
-            : "h-auto w-full object-cover object-top"
-        }
-        sizes="(min-width: 1024px) 56rem, 100vw"
-      />
-    </div>
-  );
-}
-
 export function Projects() {
-  const [nomae, civitas, anact] = projects;
-
   return (
-    <section id="projects" className="section-pad py-24 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          kicker="Featured projects"
-          title="Built like products, not homework."
-          description="Each project starts with a real constraint: rumor, access, or the limits of a single camera."
-        />
-
-        <article className="mt-16">
-          <Reveal>
-            <ProjectShot src={nomae.image} alt={nomae.imageAlt} framed />
-          </Reveal>
-          <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <Reveal>
-              <p className="kicker">
-                {nomae.kicker}
-              </p>
-              <h3 className="display mt-3 text-4xl sm:text-5xl">{nomae.name}</h3>
-              <p className="mt-5 text-2xl leading-snug tracking-tight">{nomae.headline}</p>
-            </Reveal>
-            <Reveal>
-              <p className="text-base leading-relaxed text-[var(--fg-muted)]">
-                {nomae.description}
-              </p>
-              <p className="mt-3 text-sm text-[var(--fg-muted)]">{nomae.note}</p>
-              <Tags tags={nomae.tags} />
-              <ProjectLinks
-                name={nomae.name}
-                github={nomae.github}
-                demo={nomae.demo}
-              />
-            </Reveal>
-          </div>
-        </article>
-
-        <article className="mt-28">
-          <Reveal>
-            <p className="kicker">
-              {civitas.kicker}
-            </p>
-            <h3 className="display mt-3 text-4xl sm:text-6xl">{civitas.name}</h3>
-            <p className="mt-5 max-w-3xl text-xl leading-snug sm:text-2xl">
-              {civitas.headline}
-            </p>
-          </Reveal>
-          <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <Reveal>
-              <p className="text-base leading-relaxed text-[var(--fg-muted)]">
-                {civitas.description}
-              </p>
-              <p className="mt-3 text-sm text-[var(--fg-muted)]">{civitas.note}</p>
-              <Tags tags={civitas.tags} />
-              <ProjectLinks
-                name={civitas.name}
-                github={civitas.github}
-                demo={civitas.demo}
-              />
-            </Reveal>
-            <Reveal>
-              <ProjectShot src={civitas.image} alt={civitas.imageAlt} />
-            </Reveal>
-          </div>
-        </article>
-
-        <article className="mt-28">
-          <Reveal>
-            <ProjectShot src={anact.image} alt={anact.imageAlt} />
-          </Reveal>
-          <Reveal>
-            <div className="mt-8 max-w-3xl">
-              <p className="kicker">
-                {anact.kicker}
-              </p>
-              <h3 className="display mt-3 text-4xl sm:text-5xl">{anact.name}</h3>
-              <p className="mt-4 text-xl tracking-tight sm:text-2xl">{anact.headline}</p>
-              <p className="mt-5 text-base leading-relaxed text-[var(--fg-muted)]">
-                {anact.description}
-              </p>
-              <p className="mt-3 text-sm text-[var(--fg-muted)]">{anact.note}</p>
-              <Tags tags={anact.tags} />
-              <ProjectLinks
-                name={anact.name}
-                github={anact.github}
-                demo={anact.demo}
-              />
+    <section id="projects" className="section-pad py-20 md:py-28">
+      <div className="mx-auto max-w-[760px] text-center">
+        <Reveal>
+          <h2 className="display text-[clamp(2.1rem,5vw,3rem)]">Projects</h2>
+          <p className="mx-auto mt-4 max-w-[640px] text-[0.98rem] leading-[1.75] text-[var(--fg-muted)]">
+            Things I built for rumor, trials, access, and a single camera. Click a
+            card to open it.
+          </p>
+          <dl className="mx-auto mt-8 flex items-center justify-center gap-8 sm:gap-12">
+            <div>
+              <dt className="text-[0.68rem] font-semibold tracking-[0.16em] text-[var(--fg-muted)] uppercase">
+                Weighted GPA
+              </dt>
+              <dd className="display mt-1 text-4xl text-[var(--fg)]">4.6415</dd>
             </div>
-          </Reveal>
-        </article>
+            <div className="h-10 w-px bg-[var(--accent)]" aria-hidden />
+            <div>
+              <dt className="text-[0.68rem] font-semibold tracking-[0.16em] text-[var(--fg-muted)] uppercase">
+                SAT
+              </dt>
+              <dd className="display mt-1 text-4xl text-[var(--fg)]">1520</dd>
+            </div>
+          </dl>
+        </Reveal>
+      </div>
+
+      <div className="mx-auto mt-10 grid max-w-[1180px] grid-cols-1 gap-7 sm:grid-cols-2 sm:gap-x-7 sm:gap-y-8">
+        {projects.map((project) => {
+          const href =
+            "github" in project ? (project.demo ?? project.github) : project.demo;
+          const contain = "imageFit" in project && project.imageFit === "contain";
+          return (
+            <Reveal key={project.id}>
+              <a
+                href={href}
+                {...externalRel()}
+                aria-label={`${project.name} (opens in a new tab)`}
+                className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-[var(--accent)] bg-linear-to-br from-[#5c3d22] to-[#2a1c12] text-inherit no-underline shadow-none transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_18px_4px_rgba(138,90,43,0.35),0_0_46px_10px_rgba(196,137,74,0.2)]"
+              >
+                <div className="px-2.5 pt-2.5">
+                  <div
+                    className={cn(
+                      "relative aspect-16/9 overflow-hidden rounded-lg",
+                      contain ? "bg-[#f4f1ea] p-2.5" : "bg-[#3d2a1c]",
+                    )}
+                  >
+                    <div className="relative h-full w-full">
+                      <Image
+                        src={project.image}
+                        alt={project.imageAlt}
+                        fill
+                        sizes="(min-width: 768px) 36vw, 100vw"
+                        className={
+                          contain ? "object-contain" : "object-cover object-top"
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="px-[18px] pt-3 pb-6 text-center">
+                  <h3 className="font-serif text-[1.05rem] font-semibold text-[#fff8ef]">
+                    {project.name}
+                  </h3>
+                  <p className="mt-2.5 text-[0.83rem] leading-[1.6] text-[#f4eadc]">
+                    {project.description}
+                  </p>
+                  <span className="mt-3.5 inline-block rounded-full bg-white/18 px-3.5 py-1.5 text-[0.68rem] font-semibold tracking-[0.16em] text-white uppercase">
+                    {"linkLabel" in project
+                      ? project.linkLabel
+                      : project.demo
+                        ? "Open project"
+                        : "View on GitHub"}
+                  </span>
+                </div>
+              </a>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );

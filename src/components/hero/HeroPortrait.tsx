@@ -1,105 +1,115 @@
 "use client";
 
 import { heroPortraits } from "@/data/content";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 
-const SATELLITES = 8;
+const REEL = [
+  {
+    src: "/photos/sudhith-portrait.jpg",
+    alt: "Sudhith Mannuru standing on a bridge with a river and city skyline behind him.",
+    caption: "On the bridge, looking forward.",
+    position: "50% 22%",
+  },
+  {
+    ...heroPortraits[5],
+    caption: "Mountains that reset the scale of a problem.",
+  },
+  {
+    ...heroPortraits[7],
+    caption: "Trevi. A coin, a wish, a plan.",
+  },
+  {
+    ...heroPortraits[9],
+    caption: "Rome, between classes and bigger questions.",
+  },
+  {
+    ...heroPortraits[0],
+    caption: "City light. Same curiosity.",
+  },
+  {
+    ...heroPortraits[10],
+    caption: "Home, then back to the work.",
+  },
+] as const;
 
 export function HeroPortrait() {
-  const reduce = useReducedMotion();
   const [current, setCurrent] = useState(0);
-  const total = heroPortraits.length;
-  const featured = heroPortraits[current];
+  const featured = REEL[current];
+  const total = REEL.length;
 
-  useEffect(() => {
-    if (reduce) return;
-    const id = window.setInterval(() => {
-      setCurrent((value) => (value + 1) % total);
-    }, 3200);
-    return () => window.clearInterval(id);
-  }, [reduce, total]);
-
-  const satellites = useMemo(
-    () =>
-      Array.from({ length: SATELLITES }, (_, slot) => {
-        const index = (current + slot + 1) % total;
-        return { ...heroPortraits[index], index };
-      }),
-    [current, total],
-  );
+  const go = (direction: -1 | 1) => {
+    setCurrent((value) => (value + direction + total) % total);
+  };
 
   return (
-    <motion.div
-      initial={reduce ? false : { opacity: 0, x: 18 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, delay: 0.12 }}
-      className="hero-orbit relative ml-auto h-[22rem] w-[22rem] shrink-0 sm:h-[26rem] sm:w-[26rem] lg:h-[30rem] lg:w-[30rem]"
-      aria-label="Rotating portraits of Sudhith Mannuru"
-    >
-      <div
-        className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-blue)]/14 blur-3xl sm:h-56 sm:w-56"
-        aria-hidden
-      />
+    <div className="mx-auto mt-8 max-w-[1180px] px-5 sm:px-7">
+      <div className="mb-5 flex items-baseline justify-center gap-3.5">
+        <p className="text-[0.72rem] font-semibold tracking-[0.22em] text-[var(--accent)] uppercase">
+          Out in the world
+        </p>
+        <p className="text-[0.72rem] tracking-[0.1em] text-[var(--fg-muted)]">
+          {current + 1} / {total}
+        </p>
+      </div>
 
-      <div
-        className={`absolute inset-0 ${reduce ? "" : "orbit-spin"}`}
-      >
-        {satellites.map((portrait, slot) => {
-          const angle = (360 / SATELLITES) * slot;
-          return (
-            <div
-              key={`${portrait.src}-${slot}`}
-              className="absolute left-1/2 top-1/2"
-              style={{
-                transform: `rotate(${angle}deg) translate(var(--orbit-r)) rotate(${-angle}deg)`,
-              }}
-            >
-              <div className={reduce ? "" : "orbit-spin-reverse"}>
-                <button
-                  type="button"
-                  onClick={() => setCurrent(portrait.index)}
-                  aria-label={portrait.alt}
-                  className="relative h-16 w-16 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white bg-[var(--card)] p-0 shadow-[0_10px_24px_rgba(0,0,0,0.14)] sm:h-[4.5rem] sm:w-[4.5rem] lg:h-20 lg:w-20 dark:border-white/15"
+      <div className="flex items-center justify-center gap-2 sm:gap-3">
+        <button
+          type="button"
+          onClick={() => go(-1)}
+          aria-label="Previous"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 border-[var(--accent)] bg-[var(--card)] font-serif text-2xl leading-none text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-[var(--bg)] sm:h-[52px] sm:w-[52px]"
+        >
+          ‹
+        </button>
+
+        <div className="min-w-0 flex-1">
+          <div className="border border-[var(--line)] bg-[var(--card)] p-2.5">
+            <div className="relative mx-auto h-[46vh] w-full max-w-[900px] sm:h-[62vh] sm:max-h-[620px] sm:min-h-[340px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={featured.src}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.35 }}
+                  className="absolute inset-0"
                 >
                   <Image
-                    src={portrait.src}
-                    alt=""
+                    src={featured.src}
+                    alt={featured.alt}
                     fill
-                    sizes="80px"
-                    className="object-cover"
-                    style={{ objectPosition: portrait.position }}
+                    sizes="(min-width: 1180px) 900px, 90vw"
+                    priority={current === 0}
+                    className="object-contain"
+                    style={{ objectPosition: featured.position }}
                   />
-                </button>
-              </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
-          );
-        })}
+          </div>
+          <p className="mx-auto mt-5 max-w-[620px] text-center font-serif text-[1.05rem] leading-relaxed text-[var(--fg)] italic">
+            {featured.caption}
+          </p>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => go(1)}
+          aria-label="Next"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 border-[var(--accent)] bg-[var(--card)] font-serif text-2xl leading-none text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-[var(--bg)] sm:h-[52px] sm:w-[52px]"
+        >
+          ›
+        </button>
       </div>
 
-      <div className="absolute left-1/2 top-1/2 z-10 h-[11rem] w-[11rem] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-[3px] border-white shadow-[0_16px_40px_rgba(0,0,0,0.16)] sm:h-[13rem] sm:w-[13rem] lg:h-[14.5rem] lg:w-[14.5rem] dark:border-white/15">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={featured.src}
-            initial={reduce ? false : { opacity: 0, scale: 1.06 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={featured.src}
-              alt={featured.alt}
-              fill
-              sizes="280px"
-              priority
-              className="object-cover"
-              style={{ objectPosition: featured.position }}
-            />
-          </motion.div>
-        </AnimatePresence>
+      <div className="relative mx-auto mt-8 h-px max-w-[300px] bg-[var(--line)]">
+        <div
+          className="absolute inset-y-0 left-0 bg-[var(--accent)] transition-[width] duration-300"
+          style={{ width: `${((current + 1) / total) * 100}%` }}
+        />
       </div>
-    </motion.div>
+    </div>
   );
 }

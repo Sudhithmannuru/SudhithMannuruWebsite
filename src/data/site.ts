@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Sudhith Mannuru — Student. Builder. Machine Learning Enthusiast.",
   description:
     "Sudhith Mannuru builds technology that questions information, expands access, and solves problems that matter. High school senior, machine learning enthusiast, and founder.",
-  url: "https://sudhithmannuru.com",
+  url: "https://sudhithmannuru.org",
   locale: "en_US",
   schoolLine:
     "South Forsyth High School • Class of 2027 • Intended Computer Science Major",
@@ -14,23 +14,22 @@ export const siteConfig = {
   emailIsPlaceholder: false,
   showFamilySection: true,
   rotatingPhrases: [
-    "Building with intelligence",
-    "Designing for impact",
-    "Learning without limits",
+    "Code. Cameras. Hard questions.",
+    "Built for people, not demos.",
+    "Machine learning with a spine.",
   ],
-  heroLabel: "CS • AI • HUMAN-CENTERED TECHNOLOGY",
+  heroLabel: "South Forsyth · Class of 2027",
   heroEyebrow: "Student. Builder. Machine Learning Enthusiast.",
-  heroQuote: "I build intelligent technology for problems that matter.",
-  heroTicker: "1520 SAT  ·  4.64 GPA  ·  Rank 12/656  ·  USAII Finalist",
+  heroGreeting: "Hey.",
+  heroQuote:
+    "I'm Sudhith, a senior at South Forsyth High School. I build with code, cameras, and questions that don't have easy answers — machine learning, computer vision, and tools people can actually use. Scroll down if you want the work, the travel, or a way to reach me.",
+  heroTicker: "4.64 GPA  ·  Rank 12/656  ·  USAII Finalist",
   resumePdfHref: "/resume/Sudhith_Mannuru_Resume.pdf",
 } as const;
 
 export const navItems = [
   { label: "About", href: "/#about" },
   { label: "Projects", href: "/#projects" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Coursework", href: "/#coursework" },
-  { label: "Leadership", href: "/#leadership" },
   { label: "Travel", href: "/#travel" },
   { label: "Contact", href: "/#contact" },
 ] as const;
