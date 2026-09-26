@@ -22,10 +22,27 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  jobTitle: "Student",
+  description: siteConfig.description,
+  sameAs: [
+    "https://www.linkedin.com/in/sudhith-mannuru-173325243/",
+    "https://github.com/Sudhithmannuru",
+    "https://www.instagram.com/sudhith1/",
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+  },
   title: {
-    default: siteConfig.title,
+    default: siteConfig.name,
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -58,12 +75,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "SEc1iRGgsKzMTIOBZjSBlcbZDRDHIFoQaBANx_HZPUo",
+  },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f5f7" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    { media: "(prefers-color-scheme: light)", color: "#e7e1d4" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e0d0b" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -81,6 +101,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <AppProviders>
           <SkipLink />
           <ScrollProgress />

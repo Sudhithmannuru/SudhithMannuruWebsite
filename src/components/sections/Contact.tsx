@@ -153,7 +153,7 @@ export function Contact() {
                   required
                   name="name"
                   autoComplete="name"
-                  className="w-full rounded-2xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--color-blue)]"
+                  className="w-full rounded-xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--accent)]"
                 />
               </label>
               <label className="block">
@@ -163,7 +163,7 @@ export function Contact() {
                   type="email"
                   name="email"
                   autoComplete="email"
-                  className="w-full rounded-2xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--color-blue)]"
+                  className="w-full rounded-xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--accent)]"
                 />
               </label>
               <label className="block">
@@ -173,7 +173,7 @@ export function Contact() {
                   name="message"
                   minLength={8}
                   rows={5}
-                  className="w-full resize-y rounded-2xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--color-blue)]"
+                  className="w-full resize-y rounded-xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-base outline-none transition-colors focus:border-[var(--accent)]"
                 />
               </label>
             </div>

@@ -1,22 +1,12 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
-import { NeuralField } from "./NeuralField";
-
 export function HeroBackdrop() {
-  const reduce = useReducedMotion();
-
   return (
     <div aria-hidden className="absolute inset-0 overflow-hidden">
       <div className="aurora absolute inset-0" />
-      <div className="grid-fade absolute inset-0 opacity-[0.18] dark:opacity-[0.12]" />
-      <NeuralField />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[var(--bg)] to-transparent" />
-      <div
-        className={`absolute right-[10%] top-[24%] h-44 w-44 rounded-full bg-[var(--color-blue)]/10 blur-3xl ${
-          reduce ? "" : "animate-pulse"
-        }`}
-      />
+      <div className="grid-fade absolute inset-0 opacity-[0.22] dark:opacity-[0.14]" />
+      <div className="paper-grain pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-multiply dark:opacity-[0.12] dark:mix-blend-soft-light" />
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-[var(--bg)] to-transparent" />
     </div>
   );
 }

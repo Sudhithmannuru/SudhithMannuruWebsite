@@ -1,32 +1,5 @@
 export const stats = [
   {
-    id: "sat",
-    value: 1520,
-    suffix: "",
-    label: "SAT",
-    detail: "Composite",
-    featured: true,
-    decimals: 0,
-  },
-  {
-    id: "math",
-    value: 790,
-    suffix: "",
-    label: "Math",
-    detail: "SAT section",
-    featured: false,
-    decimals: 0,
-  },
-  {
-    id: "rw",
-    value: 730,
-    suffix: "",
-    label: "Reading & Writing",
-    detail: "SAT section",
-    featured: false,
-    decimals: 0,
-  },
-  {
     id: "gpa",
     value: 4.64,
     suffix: "",
@@ -59,7 +32,7 @@ export const heroPortraits = [
   {
     src: "/photos/hero/15.jpg",
     alt: "Sudhith Mannuru on a bridge with a city skyline behind him.",
-    position: "50% 18%",
+    position: "50% 28%",
   },
   {
     src: "/photos/hero/01.jpg",
@@ -90,11 +63,6 @@ export const heroPortraits = [
     src: "/photos/hero/06.jpg",
     alt: "Sudhith Mannuru on a mountain skywalk.",
     position: "82% 22%",
-  },
-  {
-    src: "/photos/hero/07.jpg",
-    alt: "Sudhith Mannuru in a playful costume.",
-    position: "50% 22%",
   },
   {
     src: "/photos/hero/08.jpg",
@@ -192,6 +160,38 @@ export const projects = [
     imageAlt:
       "AnactOrtho dark landing page with Live, Film, IQ, and Recruit courtside tools.",
     layout: "court",
+  },
+  {
+    id: "medmatch",
+    name: "MedMatch",
+    kicker: "The trial that fits",
+    headline: "The trial that fits, not the one that merely matches.",
+    description:
+      "A clinical-trial finder for the cancers that make up most U.S. diagnoses. It starts with who a protocol is for and where it is running, then matches a note against compiled eligibility.",
+    note: "For coordinators screening de-identified notes, not for patients.",
+    tags: ["Clinical trials", "Accessibility"],
+    demo: "https://medmatch-three.vercel.app/",
+    image: "/projects/medmatch.png",
+    imageAlt:
+      "MedMatch on a phone, searching recruiting cancer trials by condition, drug or sponsor, and city.",
+    layout: "trial",
+  },
+  {
+    id: "georgia-science-fair",
+    name: "Georgia Science Fair",
+    kicker: "A genetics question",
+    headline: "Shared gene functions, traced through schizophrenia phenotypes.",
+    description:
+      "A research poster presented with Mukund G. on gene functions associated with schizophrenia. It compares mouse phenotype data with human genetic associations across behavioral, neurological, and growth traits.",
+    note: "Presented at the Georgia Science Fair in 2024.",
+    tags: ["Research", "Genetics"],
+    demo: "/research/georgia-science-fair.jpg",
+    linkLabel: "View poster",
+    image: "/research/georgia-science-fair.jpg",
+    imageAlt:
+      "Research poster titled Exploring Common Functions Associated with Genes: Unrevealing the Genetic Components of Schizophrenia, presented by Sudhith M. and Mukund G.",
+    imageFit: "contain",
+    layout: "poster",
   },
 ] as const;
 

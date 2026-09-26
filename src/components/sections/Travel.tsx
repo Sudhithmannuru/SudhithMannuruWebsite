@@ -62,7 +62,7 @@ export function Travel() {
               className={cn(
                 "relative h-24 w-28 shrink-0 overflow-hidden rounded-2xl border transition-all sm:h-28 sm:w-36",
                 item.id === active
-                  ? "border-white/80 ring-2 ring-[var(--color-blue)]"
+                  ? "border-white/80 ring-2 ring-[var(--accent)]"
                   : "border-[var(--line)] opacity-80 hover:opacity-100",
               )}
             >
