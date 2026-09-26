@@ -35,8 +35,7 @@ export function Projects() {
 
       <div className="mx-auto mt-10 grid max-w-[1180px] grid-cols-1 gap-7 sm:grid-cols-2 sm:gap-x-7 sm:gap-y-8">
         {projects.map((project) => {
-          const href =
-            "github" in project ? (project.demo ?? project.github) : project.demo;
+          const href = project.demo;
           const contain = "imageFit" in project && project.imageFit === "contain";
           return (
             <Reveal key={project.id}>
