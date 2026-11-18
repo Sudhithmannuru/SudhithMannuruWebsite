@@ -106,7 +106,7 @@ export function Contact() {
           <SectionHeading kicker="Contact" title="Let’s build something meaningful." />
           <Reveal>
             <p className="mt-6 max-w-md text-base leading-relaxed text-[var(--fg-muted)]">
-              For projects, research, or a conversation about building with more care.
+              For projects, or a conversation about building with more care.
             </p>
             <button
               type="button"

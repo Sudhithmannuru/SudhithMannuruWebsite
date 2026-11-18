@@ -1,7 +1,7 @@
 "use client";
 
 import { travel } from "@/data/content";
-import { Reveal, SectionHeading } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -15,11 +15,11 @@ export function Travel() {
   return (
     <section id="travel" className="section-pad py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          kicker="Travel"
-          title="Places that recalibrated the scale of a question."
-          description="Puerto Rico, Rome, Banff, Vellore, Bengaluru, Miami, and New York — a field notebook more than a checklist."
-        />
+        <Reveal>
+          <h2 className="display text-[2.15rem] text-[var(--fg)] sm:text-5xl md:text-[3.4rem]">
+            Travel
+          </h2>
+        </Reveal>
 
         <Reveal className="mt-12 overflow-hidden rounded-[28px] shadow-[var(--shadow)]">
           <div className="relative aspect-[4/5] min-h-[420px] w-full sm:aspect-[16/10]">

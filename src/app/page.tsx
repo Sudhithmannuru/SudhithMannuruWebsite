@@ -1,23 +1,25 @@
-import { About } from "@/components/sections/About";
-import { Contact } from "@/components/sections/Contact";
-import { Coursework } from "@/components/sections/Coursework";
-import { Experience } from "@/components/sections/Experience";
-import { Leadership } from "@/components/sections/Leadership";
-import { Projects } from "@/components/sections/Projects";
-import { Travel } from "@/components/sections/Travel";
-import { Hero } from "@/components/hero/Hero";
+import { AboutBand } from "@/components/world/AboutBand";
+import { Atlas } from "@/components/world/Atlas";
+import { Experience } from "@/components/world/Experience";
+import { Exploring } from "@/components/world/Exploring";
+import { Featured } from "@/components/world/Featured";
+import { Hero } from "@/components/world/Hero";
+import { NextStop } from "@/components/world/NextStop";
+import { Places } from "@/components/world/Places";
+import { Trail } from "@/components/world/Trail";
 
 export default function HomePage() {
   return (
     <main id="main">
       <Hero />
-      <About />
-      <Projects />
+      <Featured />
+      <Atlas />
+      <Exploring />
+      <AboutBand />
+      <Places />
       <Experience />
-      <Leadership />
-      <Coursework />
-      <Travel />
-      <Contact />
+      <Trail />
+      <NextStop />
     </main>
   );
 }

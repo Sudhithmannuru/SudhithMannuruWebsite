@@ -1,11 +1,9 @@
 import { socialLinks, siteConfig } from "@/data/site";
-import { GitHubIcon, InstagramIcon, LinkedInIcon } from "@/components/ui/SocialIcons";
+import { LinkedInIcon } from "@/components/ui/SocialIcons";
 import { externalRel } from "@/lib/utils";
 
 const icons = {
-  github: GitHubIcon,
   linkedin: LinkedInIcon,
-  instagram: InstagramIcon,
 } as const;
 
 export function Footer() {

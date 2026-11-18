@@ -10,9 +10,9 @@ export const siteConfig = {
     "South Forsyth High School • Class of 2027 • Intended Computer Science Major",
   resumeHref: "/resume",
   resumeLabel: "View Résumé",
-  email: "sudhithmannuru@gmail.com",
+  email: "sudhithmannuru@gatech.edu",
   emailIsPlaceholder: false,
-  showFamilySection: true,
+  showFamilySection: false,
   rotatingPhrases: [
     "Code. Cameras. Hard questions.",
     "Built for people, not demos.",
@@ -22,8 +22,8 @@ export const siteConfig = {
   heroEyebrow: "Student. Builder. Machine Learning Enthusiast.",
   heroGreeting: "Hey.",
   heroQuote:
-    "I'm Sudhith, a senior at South Forsyth High School. I build with code, cameras, and questions that don't have easy answers — machine learning, computer vision, and tools people can actually use. Scroll down if you want the work, the travel, or a way to reach me.",
-  heroTicker: "4.64 GPA  ·  Rank 12/656  ·  USAII Finalist",
+    "I’m Sudhith, a senior at South Forsyth High School. I like figuring out how things work and building things of my own, especially with machine learning and computer vision. Here, you’ll find my projects, places I’ve traveled, and ways to get in touch.",
+  heroTicker: "USAII Finalist",
   resumePdfHref: "/resume/Sudhith_Mannuru_Resume.pdf",
 } as const;
 
@@ -39,15 +39,5 @@ export const socialLinks = [
     id: "linkedin",
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/sudhith-mannuru-173325243/",
-  },
-  {
-    id: "github",
-    label: "GitHub",
-    href: "https://github.com/Sudhithmannuru",
-  },
-  {
-    id: "instagram",
-    label: "Instagram",
-    href: "https://www.instagram.com/sudhith1/",
   },
 ] as const;

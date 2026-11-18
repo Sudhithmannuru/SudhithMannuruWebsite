@@ -1,24 +1,28 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Instrument_Serif } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { AppProviders } from "@/components/providers/AppProviders";
-import { Footer } from "@/components/layout/Footer";
-import { Navbar } from "@/components/layout/Navbar";
-import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { Footer } from "@/components/world/Footer";
+import { Nav } from "@/components/world/Nav";
+import { Plotter } from "@/components/world/Plotter";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
-const geist = Geist({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist",
+  variable: "--font-inter",
   display: "swap",
 });
 
-const instrument = Instrument_Serif({
+const display = Space_Grotesk({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-instrument",
+  variable: "--font-display-face",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono-face",
   display: "swap",
 });
 
@@ -29,11 +33,7 @@ const personJsonLd = {
   url: siteConfig.url,
   jobTitle: "Student",
   description: siteConfig.description,
-  sameAs: [
-    "https://www.linkedin.com/in/sudhith-mannuru-173325243/",
-    "https://github.com/Sudhithmannuru",
-    "https://www.instagram.com/sudhith1/",
-  ],
+  sameAs: ["https://www.linkedin.com/in/sudhith-mannuru-173325243/"],
 };
 
 export const metadata: Metadata = {
@@ -78,13 +78,14 @@ export const metadata: Metadata = {
   verification: {
     google: "SEc1iRGgsKzMTIOBZjSBlcbZDRDHIFoQaBANx_HZPUo",
   },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon" }],
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#e7e1d4" },
-    { media: "(prefers-color-scheme: dark)", color: "#0e0d0b" },
-  ],
+  themeColor: "#fff5df",
   width: "device-width",
   initialScale: 1,
 };
@@ -97,7 +98,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${instrument.variable} h-full`}
+      className={`${inter.variable} ${display.variable} ${mono.variable} h-full`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col font-sans antialiased">
@@ -107,8 +108,8 @@ export default function RootLayout({
         />
         <AppProviders>
           <SkipLink />
-          <ScrollProgress />
-          <Navbar />
+          <Plotter />
+          <Nav />
           {children}
           <Footer />
         </AppProviders>

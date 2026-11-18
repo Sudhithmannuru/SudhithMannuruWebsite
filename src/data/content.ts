@@ -1,116 +1,7 @@
-export const stats = [
-  {
-    id: "gpa",
-    value: 4.64,
-    suffix: "",
-    label: "Weighted GPA",
-    detail: "Academic record",
-    featured: true,
-    decimals: 2,
-  },
-  {
-    id: "rank",
-    value: 12,
-    suffix: "",
-    label: "Class Rank",
-    detail: "12 of 656",
-    featured: false,
-    decimals: 0,
-  },
-  {
-    id: "percentile",
-    value: 98,
-    suffix: "th",
-    label: "Percentile",
-    detail: "National standing",
-    featured: false,
-    decimals: 0,
-  },
-] as const;
-
-export const heroPortraits = [
-  {
-    src: "/photos/hero/15.jpg",
-    alt: "Sudhith Mannuru on a bridge with a city skyline behind him.",
-    position: "50% 28%",
-  },
-  {
-    src: "/photos/hero/01.jpg",
-    alt: "A childhood portrait of Sudhith Mannuru.",
-    position: "50% 18%",
-  },
-  {
-    src: "/photos/hero/02.jpg",
-    alt: "Sudhith Mannuru as a child with his mother.",
-    position: "48% 28%",
-  },
-  {
-    src: "/photos/hero/03.jpg",
-    alt: "Sudhith Mannuru as a child with his family.",
-    position: "42% 28%",
-  },
-  {
-    src: "/photos/hero/04.jpg",
-    alt: "Sudhith Mannuru with family in autumn.",
-    position: "68% 28%",
-  },
-  {
-    src: "/photos/hero/05.jpg",
-    alt: "Sudhith Mannuru with family in the mountains.",
-    position: "78% 28%",
-  },
-  {
-    src: "/photos/hero/06.jpg",
-    alt: "Sudhith Mannuru on a mountain skywalk.",
-    position: "82% 22%",
-  },
-  {
-    src: "/photos/hero/08.jpg",
-    alt: "Sudhith Mannuru at the Trevi Fountain.",
-    position: "72% 22%",
-  },
-  {
-    src: "/photos/hero/09.jpg",
-    alt: "Sudhith Mannuru with his father at the Trevi Fountain.",
-    position: "32% 22%",
-  },
-  {
-    src: "/photos/hero/10.jpg",
-    alt: "Sudhith Mannuru in Rome.",
-    position: "58% 22%",
-  },
-  {
-    src: "/photos/hero/11.jpg",
-    alt: "Sudhith Mannuru with family outdoors.",
-    position: "28% 22%",
-  },
-  {
-    src: "/photos/hero/12.jpg",
-    alt: "Sudhith Mannuru at home with his mother.",
-    position: "28% 20%",
-  },
-  {
-    src: "/photos/hero/13.jpg",
-    alt: "Sudhith Mannuru standing with his mother.",
-    position: "72% 20%",
-  },
-  {
-    src: "/photos/hero/14.jpg",
-    alt: "Sudhith Mannuru taking a photo with his mother.",
-    position: "22% 22%",
-  },
-] as const;
-
 export const about = {
-  kicker: "About",
-  headline: "Curious enough to ask the hard question. Persistent enough to build the answer.",
-  pullQuote: "How can a computer know it was wrong?",
-  paragraphs: [
-    "I am a high school senior drawn to computer science, machine learning, and tools that change someone’s day for the better. That curiosity started with a single question: how can a computer know it was wrong? Following it taught me Python, neural networks, and the discipline of turning an idea into something people can use.",
-    "The same question led me to found my school’s first Machine Learning Club, join computational neuroscience research, ship software, and help organize an international hackathon. I care most about artificial intelligence, full-stack development, human-centered computing, and accessibility.",
-    "I want to build systems that question information, open doors to essential resources, and treat people with clarity instead of complexity.",
-  ],
-};
+  kicker: "About me",
+  text: "I’m Sudhith, a high school senior who likes figuring out how things work—and building something with what I learn. A question about how computers learn from mistakes pulled me into machine learning. Since then, I’ve founded my school’s Machine Learning Club, explored computational neuroscience, and built tools to help people check information and find essential resources. I enjoy seeing an idea become something someone can actually use.",
+} as const;
 
 export const projects = [
   {
@@ -139,7 +30,7 @@ export const projects = [
     note: "Built to make public programs readable.",
     tags: ["Next.js", "TypeScript", "Supabase", "OpenAI"],
     github: "https://github.com/Sudhithmannuru/Civitas",
-    demo: "https://civitas-flame-five.vercel.app/",
+    demo: "https://civitas-now.vercel.app/",
     image: "/projects/civitas.png",
     imageAlt:
       "Civitas landing page with the headline A new home begins with knowing your way and a language picker.",
@@ -155,7 +46,7 @@ export const projects = [
     note: "Computer vision for every gym, not only the ones with a broadcast truck.",
     tags: ["React", "Computer Vision", "Python", "OpenCV"],
     github: "https://github.com/ArshiaBajaj/AnactOrtho",
-    demo: "https://anact-ortho.vercel.app/live",
+    demo: "https://anact-ortho.vercel.app/",
     image: "/projects/anactortho.jpg",
     imageAlt:
       "AnactOrtho dark landing page with Live, Film, IQ, and Recruit courtside tools.",
@@ -177,6 +68,87 @@ export const projects = [
     layout: "trial",
   },
   {
+    id: "coachme2",
+    name: "CoachMe2",
+    kicker: "A coach, not a waitlist",
+    headline: "Everyone deserves a coach, including the teenager who would never ask.",
+    description:
+      "A nonprofit coaching platform for ages 14–19. It makes personalized coaching frictionless and affordable — a dedicated coach walking with you from where you are to where you want to be.",
+    note: "Rebuilt the site and coaching-access tools as a software intern.",
+    tags: ["Nonprofit", "Coaching"],
+    demo: "https://www.coachme2.world/",
+    image: "/projects/coachme2.jpg",
+    imageAlt:
+      "CoachMe2 homepage with the headline Everyone deserves a coach and portraits of the coaching team.",
+    layout: "coach",
+  },
+  {
+    id: "vastegunehuiyaan",
+    name: "VasteGuneHuiyaan",
+    kicker: "One workspace for the cohort",
+    headline: "Internships, class resources, and research — in one place for IIT students.",
+    description:
+      "A student workspace built for IIT students: internships, class resources, and research in one place. I joined as a team member and helped ship the live demo.",
+    note: "Built for IIT students; I helped with the demo.",
+    tags: ["Internships", "Research", "Education"],
+    demo: "https://vastegunehuiyaan.com/",
+    image: "/projects/vastegunehuiyaan.jpg",
+    imageAlt:
+      "VasteGuneHuiyaan homepage with a graduate in a cap and the headline Your journey starts here.",
+    layout: "cohort",
+  },
+  {
+    id: "hearlearn",
+    name: "HearLearn",
+    kicker: "Sound through bone",
+    headline: "A hearing device that does not need the ear.",
+    description:
+      "A bone-conduction device for people who cannot hear through the ear. Vibration carries sound through bone. I helped build the hardware and present it.",
+    note: "T-Mobile Changemaker Challenge, 2023.",
+    tags: ["Hardware", "Accessibility"],
+    demo: "/projects/hearlearn.png",
+    linkLabel: "View photo",
+    image: "/projects/hearlearn.png",
+    imageAlt:
+      "HearLearn prototype: a bone-conduction transducer on a board beside an Alpine player with a USB drive.",
+    imageFit: "contain",
+    layout: "device",
+  },
+  {
+    id: "dreamhacks",
+    name: "DreamHacks",
+    kicker: "A hackathon, opened",
+    headline: "A free hackathon for students who would not have one otherwise.",
+    description:
+      "A free international virtual hackathon I co-founded. 127 students, more than 15 industry judges, and Infosys sponsorship. Featured on Forsyth County News.",
+    note: "Featured on Forsyth County News.",
+    tags: ["Hackathon", "Leadership"],
+    demo: "https://www.forsythnews.com/life/events/these-forsyth-county-high-school-students-hosted-a-hackathon-event-for-local-kids/",
+    linkLabel: "Read the article",
+    image: "/projects/dreamhacks.png",
+    imageAlt:
+      "Forsyth County News feature on DreamHacks, with a photo of Sudhith Mannuru and Arshia Bajaj.",
+    imageFit: "contain",
+    layout: "hackathon",
+  },
+  {
+    id: "thinkneuro",
+    name: "ThinkNeuro",
+    kicker: "How drugs reach a circuit",
+    headline: "How do drugs impact neural systems?",
+    description:
+      "Collaborated on a bibliometric analysis of 100 publications about drugs’ effects on neural systems, using R and Excel to examine research trends and citation patterns.",
+    note: "ThinkNeuro research poster.",
+    tags: ["Research", "Neuroscience"],
+    demo: "/research/thinkneuro.jpg",
+    linkLabel: "View poster",
+    image: "/research/thinkneuro.jpg",
+    imageAlt:
+      "ThinkNeuro research poster titled How do drugs impact neural systems, with Sudhith Mannuru listed among the authors.",
+    imageFit: "contain",
+    layout: "poster",
+  },
+  {
     id: "georgia-science-fair",
     name: "Georgia Science Fair",
     kicker: "A genetics question",
@@ -192,146 +164,6 @@ export const projects = [
       "Research poster titled Exploring Common Functions Associated with Genes: Unrevealing the Genetic Components of Schizophrenia, presented by Sudhith M. and Mukund G.",
     imageFit: "contain",
     layout: "poster",
-  },
-] as const;
-
-export const experiences = [
-  {
-    id: "thinkneuro",
-    org: "ThinkNeuro",
-    role: "Cognitive and Computational Neuroscience Intern",
-    period: "Research",
-    points: [
-      "Conducted bibliometric analysis in R and studied how the field maps its own questions.",
-      "Co-authored and presented a neuroprosthetics research poster.",
-      "Selected for a program with a 23% acceptance rate.",
-    ],
-  },
-  {
-    id: "coachme2",
-    org: "CoachMe2",
-    role: "Software Development Intern",
-    period: "Internship",
-    points: [
-      "Helped rebuild a nonprofit website for clearer access to support.",
-      "Contributed to mental-health screening and personalized coaching applications.",
-      "Worked on tools that connect teenagers with appropriate care.",
-    ],
-  },
-  {
-    id: "icode",
-    org: "iCode",
-    role: "Coding Instructor",
-    period: "Teaching",
-    points: [
-      "Taught Python, Java, and computer science fundamentals to K–8 students.",
-      "Mentored students through hands-on projects, debugging, and problem-solving.",
-    ],
-  },
-  {
-    id: "hackunited",
-    org: "HackUnited",
-    role: "Community Engagement Director",
-    period: "Community",
-    points: [
-      "Supported hackathon sponsors and coordinated community outreach.",
-      "Helped connect free global hackathons with more than 5,000 students.",
-    ],
-  },
-] as const;
-
-export const leadership = [
-  {
-    id: "ml-club",
-    org: "Machine Learning Club",
-    role: "Founder and President",
-    description:
-      "Founded South Forsyth High School’s first Machine Learning Club. Taught neural networks, backpropagation, model training, and real-world applications through workshops, live coding, and student challenges.",
-    span: "lg",
-  },
-  {
-    id: "dreamhacks",
-    org: "DreamHacks",
-    role: "Co-Founder and Executive Director",
-    description:
-      "Co-founded a free international virtual hackathon serving 127 students. Recruited more than 15 industry judges and secured Infosys sponsorship.",
-    span: "md",
-  },
-  {
-    id: "scifye",
-    org: "SciFye",
-    role: "President; Former Vice President",
-    description:
-      "Led accessible STEM events for students with disabilities and earned the National Service Honor Gold Award after completing more than 250 service hours.",
-    span: "md",
-  },
-  {
-    id: "mu-alpha",
-    org: "Mu Alpha Theta",
-    role: "Math Tutor",
-    description:
-      "Tutored students in AP Statistics, Algebra I, Algebra II, Geometry, and SAT Math through clear step-by-step reasoning and confidence-building strategies.",
-    span: "sm",
-  },
-  {
-    id: "alzheimers",
-    org: "Walk to End Alzheimer’s",
-    role: "Team Founder and Captain",
-    description:
-      "Created a fundraising team, recruited supporters, and raised funds door-to-door for Alzheimer’s research, care, and community awareness.",
-    span: "sm",
-  },
-] as const;
-
-export const coursework = [
-  {
-    id: "math",
-    title: "Advanced Mathematics",
-    courses: [
-      "AP Precalculus",
-      "AP Statistics",
-      "AP Calculus AB",
-      "AP Calculus BC",
-      "Georgia Tech MATH 1554: Linear Algebra",
-      "Georgia Tech MATH 2551: Multivariable Calculus",
-    ],
-  },
-  {
-    id: "cs",
-    title: "Computer Science and Technology",
-    courses: [
-      "AP Computer Science Principles",
-      "AP Computer Science A",
-      "Georgia Tech CS 1301: Introduction to Computing",
-      "DE Web Dev",
-      "Introduction to Software Technology",
-    ],
-  },
-  {
-    id: "science",
-    title: "Science",
-    courses: [
-      "Honors Biology",
-      "Honors Chemistry",
-      "AP Environmental Science",
-      "AP Physics C: Mechanics",
-      "AP Psychology",
-    ],
-  },
-  {
-    id: "humanities",
-    title: "Humanities and Social Sciences",
-    courses: [
-      "AP Human Geography",
-      "AP World History",
-      "AP United States History",
-      "AP Macroeconomics",
-      "AP Microeconomics",
-      "American Government",
-      "Dual Enrollment English Composition",
-      "Dual Enrollment Spanish III",
-      "DE Spanish 4",
-    ],
   },
 ] as const;
 
