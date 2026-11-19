@@ -4,33 +4,33 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display-face), "Space Grotesk", ui-sans-serif, sans-serif;
   --font-mono: var(--font-mono-face), ui-monospace, monospace;
-  --color-ink: #25303b;
-  --color-cream: #fff5df;
-  --color-paper: #fff9ea;
-  --color-cloud: #fffdf6;
-  --color-sky: #a9ddf5;
-  --color-deep: #3278c8;
-  --color-ocean: #287f9a;
-  --color-coral: #f47f6b;
-  --color-sun: #ffd75e;
-  --color-jungle: #5dae72;
-  --color-muted: #59636d;
+  --color-ink: #2c2144;
+  --color-cream: #fff1e4;
+  --color-paper: #fff7ef;
+  --color-cloud: #fffdf9;
+  --color-sky: #ffc7a3;
+  --color-deep: #6a35e0;
+  --color-ocean: #0f8a80;
+  --color-coral: #ff5d73;
+  --color-sun: #ffe14d;
+  --color-jungle: #2faf78;
+  --color-muted: #655c78;
 }
 
 :root {
   --font-display: var(--font-display-face), "Space Grotesk", ui-sans-serif, sans-serif;
   --font-mono: var(--font-mono-face), ui-monospace, monospace;
-  --ink: #25303b;
-  --cream: #fff5df;
-  --paper: #fff9ea;
-  --cloud: #fffdf6;
-  --sky: #a9ddf5;
-  --deep: #3278c8;
-  --ocean: #287f9a;
-  --coral: #f47f6b;
-  --sun: #ffd75e;
-  --jungle: #5dae72;
-  --muted: #59636d;
+  --ink: #2c2144;
+  --cream: #fff1e4;
+  --paper: #fff7ef;
+  --cloud: #fffdf9;
+  --sky: #ffc7a3;
+  --deep: #6a35e0;
+  --ocean: #0f8a80;
+  --coral: #ff5d73;
+  --sun: #ffe14d;
+  --jungle: #2faf78;
+  --muted: #655c78;
   --line: 2.5px solid var(--ink);
   --shadow: 6px 7px 0 color-mix(in srgb, var(--ink) 18%, transparent);
   --shadow-sm: 3px 4px 0 color-mix(in srgb, var(--ink) 22%, transparent);
@@ -57,12 +57,12 @@ body {
 }
 
 ::selection {
-  background: #ffd75e;
+  background: #ffe14d;
   color: var(--ink);
 }
 
 :focus-visible {
-  outline: 3px solid #165f7d;
+  outline: 3px solid #4e2fa3;
   outline-offset: 3px;
 }
 
@@ -154,7 +154,7 @@ body {
 }
 
 .lined {
-  background-color: #fff8e8;
+  background-color: #fff4ea;
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0,
@@ -170,7 +170,7 @@ body {
   line-height: 0.84;
   text-transform: uppercase;
   text-shadow:
-    3px 3px 0 #fffdf6,
+    3px 3px 0 #fffdf9,
     7px 7px 0 color-mix(in srgb, var(--ink) 12%, transparent);
 }
 

@@ -6,14 +6,14 @@ import Link from "next/link";
 
 export function AboutBand() {
   return (
-    <section className="bg-[#3f8f62] py-16 sm:py-24" aria-labelledby="about-title">
+    <section className="bg-[#4e2fa3] py-16 sm:py-24" aria-labelledby="about-title">
       <div className="world">
-        <p className="meta text-[#e7ffe8]">Travel journal / About</p>
-        <h2 id="about-title" className="hero-title mt-3 text-[clamp(3rem,7vw,6rem)] text-[var(--ink)]">
+        <p className="meta text-[#f3e8ff]">Travel journal / About</p>
+        <h2 id="about-title" className="hero-title mt-3 text-[clamp(3rem,7vw,6rem)] text-[#fff7ef] [text-shadow:4px_4px_0_#2c2144]">
           Hey, I&apos;m
-          <span className="block text-[#16324a]">Sudhith.</span>
+          <span className="block text-[#ffe14d]">Sudhith.</span>
         </h2>
-        <div id="about" className="mt-8 grid scroll-mt-28 gap-4 rounded-[32px] border-[2.5px] border-[var(--ink)] bg-[var(--paper)] p-4 shadow-[6px_7px_0_rgba(37,48,59,0.18)] lg:grid-cols-[280px_1fr] lg:p-6">
+        <div id="about" className="mt-8 grid scroll-mt-28 gap-4 rounded-[32px] border-[2.5px] border-[var(--ink)] bg-[var(--paper)] p-4 shadow-[6px_7px_0_rgba(44,33,68,0.18)] lg:grid-cols-[280px_1fr] lg:p-6">
           <div>
             <div className="overflow-hidden rounded-[22px] border-[2.5px] border-[var(--ink)]">
               <Image

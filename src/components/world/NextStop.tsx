@@ -79,7 +79,7 @@ export function NextStop() {
           <p className="mt-4 font-mono text-sm">{siteConfig.email}</p>
         </div>
 
-        <form onSubmit={onSubmit} className="rounded-[28px] border-[2.5px] border-[var(--ink)] bg-[var(--paper)] p-5 shadow-[6px_7px_0_rgba(37,48,59,0.16)] sm:p-7">
+        <form onSubmit={onSubmit} className="rounded-[28px] border-[2.5px] border-[var(--ink)] bg-[var(--paper)] p-5 shadow-[6px_7px_0_rgba(44,33,68,0.16)] sm:p-7">
           <p className="meta text-[var(--ocean)]">Postcard</p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <label className="block text-sm font-bold">
