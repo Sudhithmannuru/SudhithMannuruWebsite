@@ -17,7 +17,6 @@ export function Atlas() {
       return [{
         project: projectById(id),
         scene: sceneFor(id),
-        onRoute: (region.ids as readonly string[]).includes(id),
       }];
     });
   }, [region]);
@@ -76,11 +75,11 @@ export function Atlas() {
             Open route · {region.name}
           </p>
           <ul className="mt-4 grid gap-4 md:grid-cols-2">
-            {list.map(({ project, scene, onRoute }) => (
+            {list.map(({ project, scene }) => (
               <li
                 id={`project-${project.id}`}
                 key={project.id}
-                className={`ink-card overflow-hidden bg-[var(--cloud)] ${onRoute ? "" : "opacity-70"}`}
+                className="ink-card overflow-hidden bg-[var(--cloud)]"
               >
                 <div className="grid sm:grid-cols-[148px_1fr]">
                   <div className="relative min-h-36 border-b-[2.5px] border-[var(--ink)] sm:border-r-[2.5px] sm:border-b-0">

@@ -7,7 +7,6 @@ const destinations = [
   { label: "Places", href: "/#places" },
   { label: "Experience", href: "/#experience" },
   { label: "Contact", href: "/#contact" },
-  { label: "Résumé", href: "/resume" },
 ];
 
 export function Footer() {

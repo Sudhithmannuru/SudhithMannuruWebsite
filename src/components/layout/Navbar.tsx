@@ -106,15 +106,6 @@ export function Navbar() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <a
-                  href={siteConfig.resumeHref}
-                  onClick={() => setOpen(false)}
-                  className="block py-2.5 text-sm font-medium"
-                >
-                  {siteConfig.resumeLabel}
-                </a>
-              </li>
             </ul>
           </motion.div>
         ) : null}

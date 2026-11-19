@@ -79,8 +79,8 @@ export const metadata: Metadata = {
     google: "SEc1iRGgsKzMTIOBZjSBlcbZDRDHIFoQaBANx_HZPUo",
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/apple-icon" }],
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "64x64" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
 };
 

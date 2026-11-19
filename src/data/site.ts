@@ -8,8 +8,6 @@ export const siteConfig = {
   locale: "en_US",
   schoolLine:
     "South Forsyth High School • Class of 2027 • Intended Computer Science Major",
-  resumeHref: "/resume",
-  resumeLabel: "View Résumé",
   email: "sudhithmannuru@gatech.edu",
   emailIsPlaceholder: false,
   showFamilySection: false,
@@ -24,7 +22,6 @@ export const siteConfig = {
   heroQuote:
     "I’m Sudhith, a senior at South Forsyth High School. I like figuring out how things work and building things of my own, especially with machine learning and computer vision. Here, you’ll find my projects, places I’ve traveled, and ways to get in touch.",
   heroTicker: "USAII Finalist",
-  resumePdfHref: "/resume/Sudhith_Mannuru_Resume.pdf",
 } as const;
 
 export const navItems = [

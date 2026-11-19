@@ -106,10 +106,6 @@ export function Nav() {
               ))}
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/resume" className="btn-ghost" onClick={() => setOpen(false)}>
-                Résumé ticket
-                <span aria-hidden>↗</span>
-              </Link>
               <button type="button" className="btn-ghost" onClick={() => setOpen(false)}>
                 Close map
               </button>

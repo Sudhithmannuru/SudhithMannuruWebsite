@@ -53,9 +53,6 @@ export function AboutBand() {
               <Link href="/#experience" className="btn-ghost">
                 Experience
               </Link>
-              <Link href="/resume" className="btn-ghost">
-                ↓ Résumé
-              </Link>
             </div>
           </div>
         </div>
