@@ -122,21 +122,11 @@ export function HomeView() {
                 {socialLinks.map((link) => {
                   const icon =
                     link.id === "instagram" ? <IconInstagram /> : link.id === "linkedin" ? <IconLinkedIn /> : <IconDiscord />;
-                  const label = "handle" in link && link.handle ? `${link.label}, ${link.handle}` : link.label;
-                  if (!link.href) {
-                    return (
-                      <li key={link.id}>
-                        <span title={label} aria-label={label} className="grid h-11 w-11 place-items-center rounded-xl bg-[#24365c] text-[var(--accent)]">
-                          {icon}
-                        </span>
-                      </li>
-                    );
-                  }
                   return (
                     <li key={link.id}>
                       <a
                         href={link.href}
-                        aria-label={label}
+                        aria-label={link.label}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="grid h-11 w-11 place-items-center rounded-xl bg-[#24365c] text-[var(--accent)]"
