@@ -10,12 +10,12 @@ export const projects = [
     kicker: "Misinformation, examined",
     headline: "A quieter way to test what the internet wants you to believe.",
     description:
-      "An AI-powered platform that evaluates text and image claims so people can separate rumor from credible information. Built for moments when the loudest story is not the truest one.",
+      "You paste a claim or a screenshot. NoMaeTrust checks it and marks what it can support. Finalist at the USAII Global AI Hackathon.",
     note: "USAII Global AI Hackathon finalist.",
     tags: ["React", "Node.js", "OpenAI", "OCR", "RAG"],
     github: "https://github.com/SudhithMannuru/NomaeTrust",
     demo: "https://nomaetrust.vercel.app",
-    image: "/projects/nomaetrust.png",
+    image: "/projects/nomaetrust.jpg",
     imageAlt:
       "NomaeTrust mobile feed showing a boil-water advisory in downtown Atlanta with claims marked as checking.",
     layout: "signal",
@@ -26,7 +26,7 @@ export const projects = [
     kicker: "Access, not paperwork",
     headline: "Guidance through twenty-seven programs, written for the person who needs the next step.",
     description:
-      "A benefits-access assistant that helps refugees navigate assistance programs, eligibility rules, documents, deadlines, and what to do next — without asking them to become policy experts first.",
+      "Pick a language. Civitas lists benefits you may qualify for, then the forms and the deadlines, in that language.",
     note: "Built to make public programs readable.",
     tags: ["Next.js", "TypeScript", "Supabase", "OpenAI"],
     github: "https://github.com/Sudhithmannuru/Civitas",
@@ -42,7 +42,7 @@ export const projects = [
     kicker: "The game, read in real time",
     headline: "An AI referee that sees the court the way a coach wishes every gym could.",
     description:
-      "A basketball analysis platform that uses computer vision for court calibration, ball tracking, automated calls, scoring, commentary, and player insight — turning one camera into a full game staff.",
+      "One camera on a basketball game. The software calibrates the court, tracks the ball, and keeps score. There is also a film room and a recruiting view.",
     note: "Computer vision for every gym, not only the ones with a broadcast truck.",
     tags: ["React", "Computer Vision", "Python", "OpenCV"],
     github: "https://github.com/ArshiaBajaj/AnactOrtho",
@@ -58,7 +58,7 @@ export const projects = [
     kicker: "The trial that fits",
     headline: "The trial that fits, not the one that merely matches.",
     description:
-      "A clinical-trial finder for the cancers that make up most U.S. diagnoses. It starts with who a protocol is for and where it is running, then matches a note against compiled eligibility.",
+      "Built for trial coordinators, not patients. Search recruiting cancer trials by condition, drug, or city, then check a de-identified note against the eligibility rules.",
     note: "For coordinators screening de-identified notes, not for patients.",
     tags: ["Clinical trials", "Accessibility"],
     demo: "https://medmatch-three.vercel.app/",
@@ -73,9 +73,10 @@ export const projects = [
     kicker: "A coach, not a waitlist",
     headline: "Everyone deserves a coach, including the teenager who would never ask.",
     description:
-      "A nonprofit coaching platform for ages 14–19. It makes personalized coaching frictionless and affordable — a dedicated coach walking with you from where you are to where you want to be.",
+      "I interned on this site. CoachMe2 matches teenagers, ages 14 to 19, with a coach.",
     note: "Rebuilt the site and coaching-access tools as a software intern.",
     tags: ["Nonprofit", "Coaching"],
+    github: "https://github.com/Sudhithmannuru/CoachMe2",
     demo: "https://www.coachme2.world/",
     image: "/projects/coachme2.jpg",
     imageAlt:
@@ -137,7 +138,7 @@ export const projects = [
     kicker: "How drugs reach a circuit",
     headline: "How do drugs impact neural systems?",
     description:
-      "Collaborated on a bibliometric analysis of 100 publications about drugs’ effects on neural systems, using R and Excel to examine research trends and citation patterns.",
+      "A ThinkNeuro poster. We read 100 papers on how drugs affect neural systems and charted the citations in R and Excel.",
     note: "ThinkNeuro research poster.",
     tags: ["Research", "Neuroscience"],
     demo: "/research/thinkneuro.jpg",
@@ -154,7 +155,7 @@ export const projects = [
     kicker: "A genetics question",
     headline: "Shared gene functions, traced through schizophrenia phenotypes.",
     description:
-      "A research poster presented with Mukund G. on gene functions associated with schizophrenia. It compares mouse phenotype data with human genetic associations across behavioral, neurological, and growth traits.",
+      "Poster with Mukund G. at the Georgia Science Fair in 2024. We compared mouse phenotype data with human gene associations for schizophrenia, across behavior, neurology, and growth.",
     note: "Presented at the Georgia Science Fair in 2024.",
     tags: ["Research", "Genetics"],
     demo: "/research/georgia-science-fair.jpg",

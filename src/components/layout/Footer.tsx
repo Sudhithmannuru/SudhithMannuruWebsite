@@ -17,7 +17,8 @@ export function Footer() {
         </p>
         <ul className="flex items-center gap-3">
           {socialLinks.map((link) => {
-            const Icon = icons[link.id];
+            if (!link.href || !(link.id in icons)) return null;
+            const Icon = icons[link.id as keyof typeof icons];
             return (
               <li key={link.id}>
                 <a

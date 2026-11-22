@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Places() {
   return (
-    <section id="places" className="bg-[#ffd4e5] py-20 sm:py-24" aria-labelledby="places-title">
+    <section id="places" className="bg-[#f2a5c4] py-20 sm:py-24" aria-labelledby="places-title">
       <div className="world">
         <p className="meta">Postcards</p>
         <h2 id="places-title" className="display mt-3 text-[clamp(2.8rem,6vw,5.2rem)]">
@@ -16,7 +16,7 @@ export function Places() {
           {travel.map((stop, index) => (
             <li
               key={stop.id}
-              className="w-[min(78vw,320px)] shrink-0 rounded-[22px] border-[2.5px] border-[var(--ink)] bg-[var(--cloud)] p-3 shadow-[5px_6px_0_rgba(44,33,68,0.16)]"
+              className="w-[min(78vw,320px)] shrink-0 rounded-[22px] border-[2.5px] border-[var(--ink)] bg-[var(--cloud)] p-3 shadow-[5px_6px_0_rgba(37,48,59,0.16)]"
               style={{ transform: `rotate(${index % 2 === 0 ? -1.5 : 1.5}deg)` }}
             >
               <Image

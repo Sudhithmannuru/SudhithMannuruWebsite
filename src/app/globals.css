@@ -1,42 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-display-face), "Space Grotesk", ui-sans-serif, sans-serif;
-  --font-mono: var(--font-mono-face), ui-monospace, monospace;
-  --color-ink: #2c2144;
-  --color-cream: #fff1e4;
-  --color-paper: #fff7ef;
-  --color-cloud: #fffdf9;
-  --color-sky: #ffc7a3;
-  --color-deep: #6a35e0;
-  --color-ocean: #0f8a80;
-  --color-coral: #ff5d73;
-  --color-sun: #ffe14d;
-  --color-jungle: #2faf78;
-  --color-muted: #655c78;
+  --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif-face), Georgia, "Times New Roman", serif;
 }
 
 :root {
-  --font-display: var(--font-display-face), "Space Grotesk", ui-sans-serif, sans-serif;
-  --font-mono: var(--font-mono-face), ui-monospace, monospace;
-  --ink: #2c2144;
-  --cream: #fff1e4;
-  --paper: #fff7ef;
-  --cloud: #fffdf9;
-  --sky: #ffc7a3;
-  --deep: #6a35e0;
-  --ocean: #0f8a80;
-  --coral: #ff5d73;
-  --sun: #ffe14d;
-  --jungle: #2faf78;
-  --muted: #655c78;
-  --line: 2.5px solid var(--ink);
-  --shadow: 6px 7px 0 color-mix(in srgb, var(--ink) 18%, transparent);
-  --shadow-sm: 3px 4px 0 color-mix(in srgb, var(--ink) 22%, transparent);
-  color-scheme: light;
-  background: var(--cream);
-  color: var(--ink);
+  --bg: #0b1220;
+  --fg: #f6f3ec;
+  --muted: #b7c0ce;
+  --line: #2a384c;
+  --paper: #141c2e;
+  --accent: #f0c36a;
+  --pine: #b7e2c5;
+  --sand: #1b2740;
+  --gold: #f0c36a;
+  color-scheme: dark;
+  background: var(--bg);
+  color: var(--fg);
 }
 
 html {
@@ -44,134 +25,100 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 6.75rem;
+  scroll-margin-top: 5.5rem;
 }
 
 body {
   min-height: 100vh;
-  background: var(--cream);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--fg);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   overflow-x: clip;
 }
 
 ::selection {
-  background: #ffe14d;
-  color: var(--ink);
+  background: #f0c36a;
+  color: #0b1220;
 }
 
 :focus-visible {
-  outline: 3px solid #4e2fa3;
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
-.world {
-  width: min(92rem, calc(100% - 1.5rem));
+.frame {
+  width: min(80rem, calc(100% - 1.5rem));
   margin-inline: auto;
 }
 
 @media (min-width: 768px) {
-  .world {
-    width: min(92rem, calc(100% - 3rem));
+  .frame {
+    width: min(80rem, calc(100% - 4rem));
   }
 }
 
-.display {
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 0.86;
-  text-transform: uppercase;
+.hero-wash {
+  background:
+    radial-gradient(520px 360px at 78% 18%, rgba(240, 195, 106, 0.22), transparent 60%),
+    radial-gradient(480px 340px at 8% 86%, rgba(70, 140, 210, 0.22), transparent 62%),
+    radial-gradient(380px 280px at 92% 88%, rgba(214, 96, 74, 0.16), transparent 60%);
+  animation: wash 16s ease-in-out infinite;
 }
 
-.meta {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  animation: grid-pan 28s linear infinite;
 }
 
-.ink-card {
-  background: var(--paper);
-  border: var(--line);
-  border-radius: 28px 36px 30px 40px;
-  box-shadow: var(--shadow);
+.skill-grid {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
-.stamp {
-  border: var(--line);
-  box-shadow: var(--shadow-sm);
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 42s linear infinite;
 }
 
-.btn-coral,
-.btn-ghost,
-.btn-sun {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  border: var(--line);
-  border-radius: 16px 20px 14px 18px;
-  padding: 0.85rem 1.15rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1);
+.marquee-reverse {
+  animation-direction: reverse;
+  animation-duration: 48s;
 }
 
-.btn-coral {
-  background: var(--coral);
-  color: var(--ink);
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.btn-sun {
-  background: var(--sun);
-  color: var(--ink);
+@keyframes wash {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-1.5%, 1%, 0);
+  }
 }
 
-.btn-ghost {
-  background: var(--cloud);
-  color: var(--ink);
-}
-
-.btn-coral:hover,
-.btn-ghost:hover,
-.btn-sun:hover {
-  transform: translate(-2px, -2px);
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  background: var(--cloud);
-  padding: 0.28rem 0.7rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
-.lined {
-  background-color: #fff4ea;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 31px,
-    color-mix(in srgb, var(--ink) 12%, transparent) 32px
-  );
-}
-
-.hero-title {
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 0.84;
-  text-transform: uppercase;
-  text-shadow:
-    3px 3px 0 #fffdf9,
-    7px 7px 0 color-mix(in srgb, var(--ink) 12%, transparent);
+@keyframes grid-pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 72px 72px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -179,24 +126,9 @@ body {
     scroll-behavior: auto;
   }
 
-  .btn-coral:hover,
-  .btn-ghost:hover,
-  .btn-sun:hover {
-    transform: none;
-  }
-
-  .plotter {
+  .hero-wash,
+  .hero-grid,
+  .marquee {
     animation: none;
-  }
-}
-
-.plotter {
-  animation: plotter-out 0.35s ease 1.05s forwards;
-}
-
-@keyframes plotter-out {
-  to {
-    opacity: 0;
-    visibility: hidden;
   }
 }

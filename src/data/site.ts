@@ -1,14 +1,15 @@
 export const siteConfig = {
   name: "Sudhith Mannuru",
   shortName: "SM",
-  title: "Sudhith Mannuru — Student. Builder. Machine Learning Enthusiast.",
+  title: "Sudhith Mannuru",
   description:
-    "Sudhith Mannuru builds technology that questions information, expands access, and solves problems that matter. High school senior, machine learning enthusiast, and founder.",
+    "Sudhith Mannuru is a senior at South Forsyth High School. He builds machine learning and software projects.",
   url: "https://sudhithmannuru.org",
   locale: "en_US",
   schoolLine:
     "South Forsyth High School • Class of 2027 • Intended Computer Science Major",
-  email: "sudhithmannuru@gatech.edu",
+  email: "sudhithmannuru@gmail.com",
+  alsoEmail: "sudhithmannuru@gatech.edu",
   emailIsPlaceholder: false,
   showFamilySection: false,
   rotatingPhrases: [
@@ -33,8 +34,18 @@ export const navItems = [
 
 export const socialLinks = [
   {
+    id: "instagram",
+    label: "Instagram",
+    href: "https://www.instagram.com/sudhith1/",
+  },
+  {
     id: "linkedin",
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/sudhith-mannuru-173325243/",
+  },
+  {
+    id: "discord",
+    label: "Discord",
+    href: "https://discord.com/users/897269148156051477",
   },
 ] as const;

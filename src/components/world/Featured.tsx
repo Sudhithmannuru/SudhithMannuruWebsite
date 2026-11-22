@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const skies: Record<SceneTone, string> = {
-  sky: "#ffd3b6",
-  lagoon: "#9ee6d2",
-  court: "#ffe08a",
-  sun: "#ffd0e6",
+  sky: "#a9ddf5",
+  lagoon: "#4fc1c9",
+  court: "#ffd75e",
+  sun: "#f2a5c4",
 };
 
 export function Featured() {
@@ -24,7 +24,7 @@ export function Featured() {
           Featured adventures
         </h2>
         <div className="relative mt-8 max-w-3xl">
-          <div className="flex items-center gap-4 rounded-[40px] border-[2.5px] border-[var(--ink)] bg-[var(--paper)] px-6 py-5 shadow-[6px_7px_0_rgba(44,33,68,0.16)]">
+          <div className="flex items-center gap-4 rounded-[40px] border-[2.5px] border-[var(--ink)] bg-[var(--paper)] px-6 py-5 shadow-[6px_7px_0_rgba(37,48,59,0.16)]">
             <Compass className="h-12 w-12 shrink-0" />
             <p className="text-xl font-semibold sm:text-2xl">A few things I&apos;ve been exploring.</p>
           </div>
@@ -43,10 +43,10 @@ export function Featured() {
                 </div>
                 <Sun className="absolute top-6 right-8 h-16 w-16" />
                 <svg className="absolute right-0 bottom-0 left-0 h-40 w-full" viewBox="0 0 800 180" preserveAspectRatio="none" aria-hidden>
-                  <path d="M0 120c120-80 200-20 320-50s220 20 480-40v150H0z" fill="#ff8f6b" stroke="#2c2144" strokeWidth="6" />
-                  <path d="M40 130c80-70 140-10 180 10 30-60 90-20 140 8v32H40z" fill="#6a35e0" stroke="#2c2144" strokeWidth="5" />
+                  <path d="M0 120c120-80 200-20 320-50s220 20 480-40v150H0z" fill="#f49a54" stroke="#25303b" strokeWidth="6" />
+                  <path d="M40 130c80-70 140-10 180 10 30-60 90-20 140 8v32H40z" fill="#287f9a" stroke="#25303b" strokeWidth="5" />
                 </svg>
-                <div className="absolute right-[6%] bottom-5 w-[min(46%,280px)] rotate-[-3deg] overflow-hidden rounded-[16px] border-[2.5px] border-[var(--ink)] bg-white shadow-[5px_6px_0_rgba(44,33,68,0.2)]">
+                <div className="absolute right-[6%] bottom-5 w-[min(46%,280px)] rotate-[-3deg] overflow-hidden rounded-[16px] border-[2.5px] border-[var(--ink)] bg-white shadow-[5px_6px_0_rgba(37,48,59,0.2)]">
                   <Image
                     src={project.image}
                     alt={project.imageAlt}
@@ -71,7 +71,7 @@ export function Featured() {
                 <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--muted)]">
                   {project.description}
                 </p>
-                <div className="mt-6 rounded-[18px] border-2 border-dashed border-[var(--ink)] bg-[#fff3c9] px-4 py-4">
+                <div className="mt-6 rounded-[18px] border-2 border-dashed border-[var(--ink)] bg-[#f3d59b] px-4 py-4">
                   <p className="meta text-[var(--jungle)]">Field note</p>
                   <p className="mt-1 font-semibold">{project.note}</p>
                 </div>

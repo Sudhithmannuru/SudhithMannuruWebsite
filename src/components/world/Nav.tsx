@@ -27,7 +27,7 @@ export function Nav() {
       <header className="fixed top-3 left-1/2 z-[90] w-[min(92rem,calc(100%-1rem))] -translate-x-1/2 sm:top-4">
         <nav
           aria-label="Primary"
-          className="flex items-center justify-between rounded-[28px] border-[2.5px] border-[var(--ink)] bg-[var(--cream)] px-3 py-2.5 shadow-[6px_7px_0_rgba(44,33,68,0.18)] sm:px-4"
+          className="flex items-center justify-between rounded-[28px] border-[2.5px] border-[var(--ink)] bg-[var(--cream)] px-3 py-2.5 shadow-[6px_7px_0_rgba(37,48,59,0.18)] sm:px-4"
         >
           <Link
             href="/"
@@ -42,7 +42,7 @@ export function Nav() {
           </Link>
           <button
             type="button"
-            className="grid h-14 w-14 place-items-center rounded-[18px] border-[2.5px] border-[var(--ink)] bg-[var(--sun)] shadow-[3px_4px_0_rgba(44,33,68,0.22)]"
+            className="grid h-14 w-14 place-items-center rounded-[18px] border-[2.5px] border-[var(--ink)] bg-[var(--sun)] shadow-[3px_4px_0_rgba(37,48,59,0.22)]"
             aria-expanded={open}
             aria-controls="adventure-map"
             onClick={() => setOpen((value) => !value)}
@@ -50,11 +50,11 @@ export function Nav() {
             <span className="sr-only">{open ? "Close adventure map" : "Open adventure map"}</span>
             {open ? (
               <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                <path d="M5 5l14 14M19 5L5 19" fill="none" stroke="#2c2144" strokeWidth="2.6" strokeLinecap="round" />
+                <path d="M5 5l14 14M19 5L5 19" fill="none" stroke="#25303b" strokeWidth="2.6" strokeLinecap="round" />
               </svg>
             ) : (
               <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#2c2144" strokeWidth="2.6" strokeLinecap="round" />
+                <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#25303b" strokeWidth="2.6" strokeLinecap="round" />
               </svg>
             )}
           </button>
@@ -81,7 +81,7 @@ export function Nav() {
                 <path
                   d="M160 10c40 70-80 110-20 180s80 90 10 160"
                   fill="none"
-                  stroke="#6a35e0"
+                  stroke="#287f9a"
                   strokeWidth="4"
                   strokeDasharray="10 10"
                   strokeLinecap="round"
@@ -92,7 +92,7 @@ export function Nav() {
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-center gap-4 rounded-[22px] border-[2.5px] border-[var(--ink)] bg-[var(--paper)] px-5 py-3 shadow-[4px_5px_0_rgba(44,33,68,0.16)] sm:px-7 sm:py-4"
+                    className="flex items-center gap-4 rounded-[22px] border-[2.5px] border-[var(--ink)] bg-[var(--paper)] px-5 py-3 shadow-[4px_5px_0_rgba(37,48,59,0.16)] sm:px-7 sm:py-4"
                   >
                     <span className="meta text-[var(--ocean)]">{item.n}</span>
                     <span className="font-display text-3xl font-bold tracking-[-0.04em] sm:text-5xl">

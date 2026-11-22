@@ -1,28 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { AppProviders } from "@/components/providers/AppProviders";
-import { Footer } from "@/components/world/Footer";
-import { Nav } from "@/components/world/Nav";
-import { Plotter } from "@/components/world/Plotter";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { Header } from "@/components/site/Header";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
-const inter = Inter({
+const sans = Outfit({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const display = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-display-face",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono-face",
+  variable: "--font-sans-face",
   display: "swap",
 });
 
@@ -33,7 +19,11 @@ const personJsonLd = {
   url: siteConfig.url,
   jobTitle: "Student",
   description: siteConfig.description,
-  sameAs: ["https://www.linkedin.com/in/sudhith-mannuru-173325243/"],
+  sameAs: [
+    "https://www.linkedin.com/in/sudhith-mannuru-173325243/",
+    "https://www.instagram.com/sudhith1/",
+    "https://discord.com/users/897269148156051477",
+  ],
 };
 
 export const metadata: Metadata = {
@@ -52,8 +42,7 @@ export const metadata: Metadata = {
   keywords: [
     "Sudhith Mannuru",
     "machine learning",
-    "student portfolio",
-    "computer science",
+    "computer vision",
     "NoMaeTrust",
     "Civitas",
     "AnactOrtho",
@@ -85,7 +74,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fff1e4",
+  themeColor: "#0b1220",
   width: "device-width",
   initialScale: 1,
 };
@@ -98,7 +87,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${display.variable} ${mono.variable} h-full`}
+      className={`${sans.variable} h-full`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col font-sans antialiased">
@@ -108,10 +97,8 @@ export default function RootLayout({
         />
         <AppProviders>
           <SkipLink />
-          <Plotter />
-          <Nav />
+          <Header />
           {children}
-          <Footer />
         </AppProviders>
       </body>
     </html>
