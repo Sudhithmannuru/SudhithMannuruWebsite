@@ -121,6 +121,107 @@ body {
   }
 }
 
+.flight-lane {
+  background-image:
+    radial-gradient(1.5px 1.5px at 8% 30%, rgba(255, 255, 255, 0.75) 50%, transparent 52%),
+    radial-gradient(1px 1px at 22% 18%, rgba(255, 255, 255, 0.55) 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 41% 42%, rgba(255, 255, 255, 0.7) 50%, transparent 52%),
+    radial-gradient(1px 1px at 63% 16%, rgba(255, 255, 255, 0.5) 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 78% 36%, rgba(255, 255, 255, 0.65) 50%, transparent 52%),
+    radial-gradient(1px 1px at 91% 22%, rgba(255, 255, 255, 0.55) 50%, transparent 52%);
+}
+
+.london-sky {
+  height: 46%;
+  color: #2a3d5c;
+  mask-image: linear-gradient(to top, #000 62%, transparent);
+}
+
+.london-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  align-items: flex-end;
+  animation: city-pan 56s linear infinite;
+}
+
+.city-window {
+  animation: beacon 3.6s ease-in-out infinite;
+}
+
+.city-window:nth-child(3n) {
+  animation-delay: 0.8s;
+}
+
+.city-window:nth-child(4n) {
+  animation-delay: 1.6s;
+}
+
+.contrail::before {
+  content: "";
+  position: absolute;
+  top: 46%;
+  right: 92%;
+  width: 7rem;
+  height: 2px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.7), transparent);
+}
+
+.flight-plane {
+  animation: cruise 16s linear infinite;
+}
+
+.flight-plane-far {
+  animation-duration: 26s;
+  animation-direction: reverse;
+}
+
+.runway-light {
+  height: 7px;
+  width: 7px;
+  flex: none;
+  border-radius: 999px;
+  background: #f4f7fb;
+  box-shadow: 0 0 8px rgba(244, 247, 251, 0.85);
+  animation: beacon 2.2s ease-in-out infinite;
+}
+
+.runway-light-amber {
+  background: #f0c36a;
+  box-shadow: 0 0 10px rgba(240, 195, 106, 0.9);
+}
+
+@keyframes cruise {
+  0% {
+    transform: translate3d(-18vw, 4px, 0) rotate(-3deg);
+  }
+  50% {
+    transform: translate3d(46vw, -2px, 0) rotate(2deg);
+  }
+  100% {
+    transform: translate3d(108vw, 3px, 0) rotate(-2deg);
+  }
+}
+
+@keyframes city-pan {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes beacon {
+  0%,
+  100% {
+    opacity: 0.28;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -128,7 +229,15 @@ body {
 
   .hero-wash,
   .hero-grid,
-  .marquee {
+  .marquee,
+  .flight-plane,
+  .runway-light,
+  .london-track,
+  .city-window {
     animation: none;
+  }
+
+  .runway-light {
+    opacity: 0.9;
   }
 }

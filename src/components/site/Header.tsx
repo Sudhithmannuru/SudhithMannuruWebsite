@@ -1,5 +1,6 @@
 "use client";
 
+import { Plane } from "@/components/site/Plane";
 import { siteConfig } from "@/data/site";
 import Link from "next/link";
 import { useState } from "react";
@@ -16,7 +17,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0b1220]/80 backdrop-blur-md">
       <div className="frame flex h-16 items-center justify-between gap-6">
-        <Link href="/" className="text-sm font-semibold tracking-wide">
+        <Link href="/" className="flex items-center gap-2 text-sm font-semibold tracking-wide">
+          <Plane className="h-6 w-6 text-[var(--accent)]" />
           {siteConfig.name}
         </Link>
         <nav className="hidden items-center gap-7 text-sm md:flex" aria-label="Primary">

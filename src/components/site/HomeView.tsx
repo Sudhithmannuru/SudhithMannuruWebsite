@@ -1,4 +1,6 @@
+import { LondonSky } from "@/components/site/LondonSky";
 import { MessageForm } from "@/components/site/MessageForm";
+import { Airliner, Plane } from "@/components/site/Plane";
 import { SkillRoll } from "@/components/site/SkillRoll";
 import { projects } from "@/data/content";
 import { siteConfig, socialLinks } from "@/data/site";
@@ -41,6 +43,38 @@ function byId(id: string) {
   const project = projects.find((item) => item.id === id);
   if (!project) throw new Error(`Missing project ${id}`);
   return project;
+}
+
+function FlightLane() {
+  return (
+    <div className="flight-lane relative h-28 overflow-hidden" aria-hidden>
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 112" preserveAspectRatio="none">
+        <path
+          d="M0 78 C 180 36, 340 96, 600 58 S 960 28, 1200 64"
+          fill="none"
+          stroke="rgba(240,195,106,0.45)"
+          strokeWidth="2"
+          strokeDasharray="8 10"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+      <span className="flight-plane contrail absolute top-6 block h-9 w-32 text-white">
+        <Airliner className="h-full w-full" />
+      </span>
+      <span className="flight-plane flight-plane-far contrail absolute top-1 block h-6 w-20 text-white/45">
+        <Airliner className="h-full w-full" />
+      </span>
+      <div className="absolute inset-x-0 bottom-3 flex justify-center gap-3.5">
+        {Array.from({ length: 32 }, (_, index) => (
+          <span
+            key={index}
+            className={index % 2 === 0 ? "runway-light" : "runway-light runway-light-amber"}
+            style={{ animationDelay: `${(index % 6) * 0.18}s` }}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function openLabel(project: (typeof projects)[number]) {
@@ -90,9 +124,11 @@ export function HomeView() {
     <>
       <main id="main">
         <section className="relative overflow-hidden" aria-labelledby="intro-title">
-          <div className="hero-grid pointer-events-none absolute inset-0 opacity-70" />
+          <div className="relative">
+          <div className="hero-grid pointer-events-none absolute inset-0 opacity-35" />
           <div className="hero-wash pointer-events-none absolute inset-0" />
-          <div className="frame relative grid items-center gap-12 py-16 md:grid-cols-[1.15fr_.85fr] md:py-24">
+          <LondonSky />
+          <div className="frame relative z-10 grid items-center gap-12 py-16 md:grid-cols-[1.15fr_.85fr] md:py-24">
             <div>
               <p className="text-sm font-semibold text-[var(--accent)]">Machine learning and software</p>
               <h1 id="intro-title" className="mt-3 text-5xl font-semibold tracking-tight text-white sm:text-6xl">
@@ -141,6 +177,9 @@ export function HomeView() {
             <figure className="justify-self-center">
               <div className="relative h-72 w-72 sm:h-80 sm:w-80">
                 <div className="absolute -top-3 -right-3 h-full w-full rounded-full bg-[#d64532]/80" />
+                <span className="absolute -bottom-1 -left-1 z-10 grid h-12 w-12 place-items-center rounded-full bg-[var(--accent)] text-[#1a1408] shadow-lg">
+                  <Plane className="h-7 w-7" />
+                </span>
                 <div className="absolute inset-0 overflow-hidden rounded-full border-4 border-[#0b1220]">
                   <Image
                     src="/photos/sudhith-portrait.jpg"
@@ -156,6 +195,8 @@ export function HomeView() {
               <figcaption className="mt-4 text-center text-sm text-[var(--muted)]">London</figcaption>
             </figure>
           </div>
+          </div>
+          <FlightLane />
         </section>
 
         <SkillRoll />
@@ -246,7 +287,10 @@ export function HomeView() {
       <footer className="border-t border-white/10">
         <div className="frame flex flex-wrap justify-between gap-3 py-6 text-sm text-[var(--muted)]">
           <p>© {year} Sudhith Mannuru</p>
-          <p>South Forsyth · Class of 2027</p>
+          <p className="flex items-center gap-2">
+            <Plane className="h-5 w-5 text-[var(--accent)]" />
+            South Forsyth · Class of 2027
+          </p>
         </div>
       </footer>
     </>
